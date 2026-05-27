@@ -1,0 +1,370 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-primary: #ff3f6c;
+  --color-primaryDark: #e02f5c;
+  --color-secondary: #282c3f;
+  --color-accent: #ff3f6c;
+  --color-accentGold: #c89b3c;
+  --color-luxuryGold: #b8860b;
+  --color-bgWhite: #ffffff;
+  --color-bgLight: #f5f5f6;
+  --color-bgCream: #fafafa;
+  --color-textDark: #282c3f;
+  --color-textMuted: #94969f;
+  --color-textLight: #535766;
+  --color-borderLight: #e8e8e1;
+  --color-cardBg: #ffffffff;
+  --color-neonBlue: #00f3ff;
+  --color-electricPurple: #8a2be2;
+  --color-matteBlack: #0a0a0a;
+  --color-deepCharcoal: #1a1a1a;
+
+
+  /* Typography */
+  --font-sans: "Outfit", "Inter", sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-editorial: "Cormorant Garamond", "Times New Roman", serif;
+  --font-luxury: "Italiana", serif;
+  --font-fashion: "Bodoni Moda", "Didot", serif;
+  --font-theater: "Cinzel", "Trajan", serif;
+
+  /* Shadows */
+  --shadow-card: 0 1px 4px rgba(40,44,63,0.08);
+  --shadow-card-hover: 0 8px 30px rgba(40,44,63,0.12);
+  --shadow-soft: 0 2px 12px rgba(0,0,0,0.06);
+  --shadow-premium: 0 12px 40px rgba(0,0,0,0.1);
+  --shadow-glow-pink: 0 0 20px rgba(255,63,108,0.3);
+
+  /* Animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 10px rgba(255,63,108,0.2); }
+    50% { box-shadow: 0 0 30px rgba(255,63,108,0.4); }
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  @keyframes bounceSubtle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  @keyframes slideInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: float 10s ease-in-out infinite;
+  --animate-pulse-glow: pulseGlow 3s ease-in-out infinite;
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-blink: blink 1s step-end infinite;
+  --animate-gradient-shift: gradientShift 8s ease infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+  --animate-bounce-subtle: bounceSubtle 3s ease-in-out infinite;
+  --animate-slide-in-up: slideInUp 0.6s ease-out;
+  --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
+  --animate-pulse: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Italiana&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;0,6..96,900;1,6..96,400;1,6..96,500;1,6..96,600;1,6..96,700;1,6..96,800;1,6..96,900&family=Cinzel:wght@400;500;600;700;800;900&display=swap');
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    @apply bg-bgWhite text-secondary font-sans antialiased selection:bg-primary selection:text-white;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+  
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Premium heading defaults */
+  h1, h2, h3 {
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-borderLight;
+  }
+  
+  .glass-card {
+    @apply bg-white border border-borderLight shadow-card rounded-xl;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-electricPurple;
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-luxuryGold to-accentGold;
+  }
+
+  /* ── PREMIUM FONT UTILITIES ── */
+
+  /* Playfair Display — Elegant italic accents */
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  /* Cormorant Garamond — Theatrical editorial serif */
+  .font-editorial {
+    font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+    letter-spacing: 0.02em;
+  }
+
+  /* Italiana — Ultra-luxury display (logos, brand names) */
+  .font-luxury {
+    font-family: 'Italiana', serif;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* Bodoni Moda — High-fashion magazine serif */
+  .font-fashion {
+    font-family: 'Bodoni Moda', 'Didot', serif;
+  }
+
+  /* Cinzel — Grand theatrical display (Roman capitals) */
+  .font-theater {
+    font-family: 'Cinzel', 'Trajan', serif;
+    letter-spacing: 0.08em;
+  }
+
+  /* Outfit — Clean modern sans for body/UI */
+  .font-body {
+    font-family: 'Outfit', 'Inter', sans-serif;
+  }
+}
+
+/* ═══════════════════════ CUSTOM SCROLLBAR ═══════════════════════ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4d5d9;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff3f6c;
+}
+
+/* ═══════════════════════ TYPING CURSOR ═══════════════════════ */
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.1em;
+  background: #ff3f6c;
+  margin-left: 4px;
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+  border-radius: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ═══════════════════════ PREMIUM CARD HOVER ═══════════════════════ */
+.premium-card {
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  border: 1px solid transparent;
+}
+
+.premium-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  border-color: #ff3f6c;
+}
+
+/* ═══════════════════════ MARQUEE / TICKER ═══════════════════════ */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: inline-flex;
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ═══════════════════════ SCROLL REVEAL ═══════════════════════ */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.reveal-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════════════════════ MODEL CARD ═══════════════════════ */
+.model-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.model-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+.model-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.model-card img {
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.model-card:hover img {
+  transform: scale(1.08);
+}
+
+/* ═══════════════════════ LUXURY SECTION ═══════════════════════ */
+.luxury-bg {
+  background: linear-gradient(135deg, #faf6f1 0%, #f5ebe0 30%, #ede0d4 60%, #e8d5c4 100%);
+}
+
+.cosmetics-bg {
+  background: linear-gradient(135deg, #faf0f6 0%, #f3e8f0 30%, #ede4f0 60%, #e8dff0 100%);
+}
+
+/* ═══════════════════════ IMAGE ZOOM ═══════════════════════ */
+.img-zoom-container {
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.img-zoom-container img {
+  transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.img-zoom-container:hover img {
+  transform: scale(1.1);
+}
+
+/* ═══════════════════════ FILTER TAB ═══════════════════════ */
+.filter-tab-active {
+  position: relative;
+  color: #ff3f6c;
+  font-weight: 700;
+}
+
+.filter-tab-active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: #ff3f6c;
+  border-radius: 2px;
+}
+
+/* ═══════════════════════ HERO GRADIENT OVERLAY ═══════════════════════ */
+.hero-white-overlay {
+  background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 40%, rgba(255,255,255,0.6) 100%);
+}
+
+/* ═══════════════════════ SKELETON LOADING ═══════════════════════ */
+.skeleton-shimmer {
+  position: relative;
+  overflow: hidden;
+  background: #c8c9cd;
+}
+
+.skeleton-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.5) 40%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0.5) 60%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* ═══════════════════════ BADGE STYLES ═══════════════════════ */
+.badge-new {
+  background: linear-gradient(135deg, #ff3f6c, #ff6f61);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-luxury {
+  background: linear-gradient(135deg, #b8860b, #daa520);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
