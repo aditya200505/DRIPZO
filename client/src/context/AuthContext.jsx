@@ -3,7 +3,8 @@ import axios from 'axios';
 
 const AuthContext = createContext();
 
-const API_URL = 'http://localhost:5000/api/auth';
+const baseApiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = `${baseApiUrl.endsWith('/api') ? baseApiUrl : `${baseApiUrl}/api`}/auth`;
 
 export const useAuth = () => {
   return useContext(AuthContext);
