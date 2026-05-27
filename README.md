@@ -1,5 +1,14 @@
 # DRIPZO ── Premium Multi-Vendor Luxury Fashion & Streetwear Hub
 
+## 🚀 Live Production Links
+The platform is fully deployed and accessible globally! Use these links to interact with the production environment:
+*   **🛒 Customer Storefront**: [https://dripzo.vercel.app](https://dripzo.vercel.app) *(Note: If your Vercel subdomain has a custom prefix, update this link to match your Vercel URL)*
+*   **👑 Command Central (Admin Panel)**: [https://dripzo-admin.vercel.app](https://dripzo-admin.vercel.app)
+*   **🏪 Vendor Hub (Vendor Portal)**: [https://dripzo-vendor.vercel.app](https://dripzo-vendor.vercel.app)
+*   **⚙️ Core REST API Backend**: [https://dripzo-backend.onrender.com](https://dripzo-backend.onrender.com)
+
+---
+
 DRIPZO is a high-end, state-of-the-art multi-vendor e-commerce platform designed to bring a premium, curated shopping experience to modern streetwear and luxury fashion enthusiasts. The platform bridges the gap between discerning customers, luxury vendors (boutiques), and platform administrators with three distinct, beautifully designed interfaces and a robust backend.
 
 ---
