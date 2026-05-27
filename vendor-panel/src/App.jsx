@@ -8,7 +8,7 @@ import {
   FileText, LogOut, Edit3, RefreshCw, Truck, Check
 } from 'lucide-react';
 
-const API = 'http://localhost:5000/api';
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 // ─── Design Tokens ─────────────────────────────────────────
 const C = {
