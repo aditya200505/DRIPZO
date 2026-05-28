@@ -133,7 +133,7 @@ const Navbar = () => {
             <button onClick={() => setIsSearchOpen(true)} className="text-secondary hover:text-primary transition-colors p-1.5 lg:hidden">
               <Search size={20} />
             </button>
-            <Link to={isAuthenticated ? "/dashboard" : "/auth"} className="text-secondary hover:text-primary transition-colors p-1.5 hidden sm:block">
+            <Link to={isAuthenticated ? "/dashboard" : "/auth"} className="text-secondary hover:text-primary transition-colors p-1.5">
               <User size={20} />
             </Link>
             <Link to="/dashboard?tab=wishlist" className="relative text-secondary hover:text-primary transition-colors p-1.5 hidden sm:block">
@@ -263,6 +263,14 @@ const Navbar = () => {
                     {item.label}
                   </Link>
                 ))}
+                
+                <Link to={isAuthenticated ? "/dashboard" : "/auth"} 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="py-3.5 text-primary hover:text-primaryDark transition-colors font-bold text-sm uppercase tracking-wider flex items-center justify-between"
+                >
+                  <span>{isAuthenticated ? 'My Dashboard' : 'Login / Sign Up'}</span>
+                  <ArrowRight size={16} />
+                </Link>
               </div>
             </motion.div>
           )}
