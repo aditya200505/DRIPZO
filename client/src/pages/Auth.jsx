@@ -19,16 +19,72 @@ const Auth = () => {
   const { showToast } = useShop();
   const navigate = useNavigate();
 
+  // Refs to handle Google Token Client and prevent stale closures
+  const tokenClientRef = React.useRef(null);
+  const googleLoginCallbackRef = React.useRef(null);
+  const googleLoginErrorCallbackRef = React.useRef(null);
+
+  // Keep callback refs updated on every render
+  googleLoginCallbackRef.current = async (tokenResponse) => {
+    if (tokenResponse && tokenResponse.access_token) {
+      const result = await socialLogin('google', { accessToken: tokenResponse.access_token });
+      if (result.success) {
+        showToast('Successfully authenticated with Google!', 'success');
+        navigate('/dashboard');
+      } else {
+        showToast(result.message || 'Google Authentication failed', 'error');
+      }
+    } else {
+      showToast('Google authentication cancelled.', 'error');
+    }
+    setIsSocialLoading(false);
+  };
+
+  googleLoginErrorCallbackRef.current = (err) => {
+    console.error('Google token client error:', err);
+    showToast('Google login was closed or failed to open.', 'error');
+    setIsSocialLoading(false);
+  };
+
+  const initializeGoogleTokenClient = () => {
+    if (window.google && !tokenClientRef.current) {
+      try {
+        tokenClientRef.current = window.google.accounts.oauth2.initTokenClient({
+          client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID || '1055860055551-5vetnkbvost075rq86i7ufd4hjtb8seq.apps.googleusercontent.com',
+          scope: 'email profile',
+          callback: (response) => googleLoginCallbackRef.current?.(response),
+          error_callback: (err) => googleLoginErrorCallbackRef.current?.(err)
+        });
+      } catch (err) {
+        console.error('Failed to initialize Google Token Client:', err);
+      }
+    }
+  };
+
   // Load Google GIS and Facebook SDK on Mount
   useEffect(() => {
     // Google Identity Services (GIS) loader
     const loadGoogleScript = () => {
-      if (document.getElementById('google-gis-script')) return;
+      const existingScript = document.getElementById('google-gis-script');
+      if (existingScript) {
+        if (window.google) {
+          initializeGoogleTokenClient();
+        } else {
+          existingScript.onload = () => {
+            initializeGoogleTokenClient();
+          };
+        }
+        return;
+      }
+
       const script = document.createElement('script');
       script.src = 'https://accounts.google.com/gsi/client';
       script.id = 'google-gis-script';
       script.async = true;
       script.defer = true;
+      script.onload = () => {
+        initializeGoogleTokenClient();
+      };
       document.body.appendChild(script);
     };
     loadGoogleScript();
@@ -173,7 +229,13 @@ const Auth = () => {
   };
 
   const handleGoogleLogin = () => {
-    if (typeof window.google === 'undefined') {
+    if (!tokenClientRef.current) {
+      if (window.google) {
+        initializeGoogleTokenClient();
+      }
+    }
+
+    if (!tokenClientRef.current) {
       showToast('Google Sign-In is loading, please try again.', 'info');
       return;
     }
@@ -181,30 +243,7 @@ const Auth = () => {
     setIsSocialLoading(true);
 
     try {
-      const tokenClient = window.google.accounts.oauth2.initTokenClient({
-        client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID || '92150917281-229qg0lhsh2i7rm9lqdf1067t4j9e22e.apps.googleusercontent.com',
-        scope: 'email profile',
-        callback: async (tokenResponse) => {
-          if (tokenResponse && tokenResponse.access_token) {
-            const result = await socialLogin('google', { accessToken: tokenResponse.access_token });
-            if (result.success) {
-              showToast('Successfully authenticated with Google!', 'success');
-              navigate('/dashboard');
-            } else {
-              showToast(result.message || 'Google Authentication failed', 'error');
-            }
-          } else {
-            showToast('Google authentication cancelled.', 'error');
-          }
-          setIsSocialLoading(false);
-        },
-        error_callback: (err) => {
-          console.error('Google token client error:', err);
-          showToast('Google popup failed to initialize.', 'error');
-          setIsSocialLoading(false);
-        }
-      });
-      tokenClient.requestAccessToken();
+      tokenClientRef.current.requestAccessToken();
     } catch (err) {
       console.error('Failed to trigger Google authentication:', err);
       showToast('Google login error. Check console for details.', 'error');

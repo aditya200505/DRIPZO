@@ -17,7 +17,8 @@ export const ShopProvider = ({ children }) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const { data } = await axios.get('http://localhost:5000/api/products');
+        const API_BASE = import.meta.env.VITE_API_URL || (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? 'http://localhost:5000/api' : 'https://dripzo-backend.onrender.com/api');
+        const { data } = await axios.get(`${API_BASE}/products`);
         if (data.success && data.products) {
           setDynamicProducts(data.products);
           setProductsLoaded(true);

@@ -147,7 +147,8 @@ const Checkout = () => {
         paymentMethod: paymentMethod === 'upi' ? `upi_${upiModal.app}` : paymentMethod
       };
 
-      const res = await axios.post('http://localhost:5000/api/orders', orderPayload);
+      const API_BASE = import.meta.env.VITE_API_URL || (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? 'http://localhost:5000/api' : 'https://dripzo-backend.onrender.com/api');
+      const res = await axios.post(`${API_BASE}/orders`, orderPayload);
       
       if (res.data.success) {
         showToast('Order placed successfully! Fulfilling in 1 hour.', 'success');

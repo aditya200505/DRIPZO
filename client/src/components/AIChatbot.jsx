@@ -56,8 +56,9 @@ const AIChatbot = () => {
     setIsTyping(true);
 
     try {
+      const API_BASE = import.meta.env.VITE_API_URL || (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? 'http://localhost:5000/api' : 'https://dripzo-backend.onrender.com/api');
       // Try calling the powerful AI Brain (Gemini via Backend)
-      const { data } = await axios.post('http://localhost:5000/api/ai/chat', {
+      const { data } = await axios.post(`${API_BASE}/ai/chat`, {
         message: text,
         history: messages.slice(-5) // Send last 5 messages for context
       });

@@ -50,7 +50,8 @@ const DripzyRoast = () => {
     // Simulate API call delay for cinematic feel
     setTimeout(async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/roast/generate', {
+        const API_BASE = import.meta.env.VITE_API_URL || (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? 'http://localhost:5000/api' : 'https://dripzo-backend.onrender.com/api');
+        const response = await fetch(`${API_BASE}/roast/generate`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -81,7 +82,8 @@ const DripzyRoast = () => {
 
   const fetchHistory = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/roast/history', {
+      const API_BASE = import.meta.env.VITE_API_URL || (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? 'http://localhost:5000/api' : 'https://dripzo-backend.onrender.com/api');
+      const response = await fetch(`${API_BASE}/roast/history`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('dripzo_token')}`
         }

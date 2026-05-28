@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const AuthContext = createContext();
 
-const baseApiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const baseApiUrl = import.meta.env.VITE_API_URL || (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? 'http://localhost:5000/api' : 'https://dripzo-backend.onrender.com/api');
 const API_URL = `${baseApiUrl.endsWith('/api') ? baseApiUrl : `${baseApiUrl}/api`}/auth`;
 
 export const useAuth = () => {

@@ -64,7 +64,8 @@ const Dashboard = () => {
     const fetchUserOrders = async () => {
       setOrdersLoading(true);
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/orders/user/${currentUser.id}`);
+        const API_BASE = import.meta.env.VITE_API_URL || (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? 'http://localhost:5000/api' : 'https://dripzo-backend.onrender.com/api');
+        const { data } = await axios.get(`${API_BASE}/orders/user/${currentUser.id}`);
         if (data.success && data.orders) {
           import('../data/productData').then((module) => {
             const mappedOrders = data.orders.map(order => {
@@ -141,7 +142,8 @@ const Dashboard = () => {
   // --- HANDLERS ---
   const handleCancelOrder = async (id) => {
     try {
-      const res = await axios.put(`http://localhost:5000/api/admin/orders/${id}`, {
+      const API_BASE = import.meta.env.VITE_API_URL || (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? 'http://localhost:5000/api' : 'https://dripzo-backend.onrender.com/api');
+      const res = await axios.put(`${API_BASE}/admin/orders/${id}`, {
         status: 'cancelled',
         paymentStatus: 'failed'
       });
