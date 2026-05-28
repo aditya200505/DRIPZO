@@ -136,7 +136,7 @@ const Navbar = () => {
             <Link to={isAuthenticated ? "/dashboard" : "/auth"} className="text-secondary hover:text-primary transition-colors p-1.5">
               <User size={20} />
             </Link>
-            <Link to="/dashboard?tab=wishlist" className="relative text-secondary hover:text-primary transition-colors p-1.5 hidden sm:block">
+            <Link to="/dashboard?tab=wishlist" className="relative text-secondary hover:text-primary transition-colors p-1.5">
               <Heart size={20} />
               {wishlist.length > 0 && (
                 <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center font-bold">{wishlist.length}</span>
@@ -263,6 +263,14 @@ const Navbar = () => {
                     {item.label}
                   </Link>
                 ))}
+                
+                <Link to="/dashboard?tab=wishlist" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="py-3 text-secondary hover:text-primary transition-colors font-semibold text-sm uppercase tracking-wider border-b border-borderLight flex items-center justify-between"
+                >
+                  <span>My Wishlist</span>
+                  <span className="bg-red-500/10 text-red-500 text-xs px-2.5 py-0.5 rounded-full font-bold">{wishlist.length}</span>
+                </Link>
                 
                 <Link to={isAuthenticated ? "/dashboard" : "/auth"} 
                   onClick={() => setIsMobileMenuOpen(false)}
