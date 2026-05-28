@@ -3,8 +3,20 @@ import axios from 'axios';
 
 const AuthContext = createContext();
 
-const baseApiUrl = import.meta.env.VITE_API_URL || (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? 'http://localhost:5000/api' : 'https://dripzo-backend.onrender.com/api');
-const API_URL = `${baseApiUrl.endsWith('/api') ? baseApiUrl : `${baseApiUrl}/api`}/auth`;
+const cleanApiUrl = (url) => {
+  let clean = url.trim();
+  while (clean.endsWith('/')) {
+    clean = clean.slice(0, -1);
+  }
+  if (clean.endsWith('/api')) {
+    return clean;
+  }
+  return `${clean}/api`;
+};
+
+const rawApiUrl = import.meta.env.VITE_API_URL || (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? 'http://localhost:5000/api' : 'https://dripzo-backend.onrender.com/api');
+const baseApiUrl = cleanApiUrl(rawApiUrl);
+const API_URL = `${baseApiUrl}/auth`;
 
 export const useAuth = () => {
   return useContext(AuthContext);
