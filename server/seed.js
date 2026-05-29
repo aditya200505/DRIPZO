@@ -48,45 +48,7 @@ const seedData = async () => {
     });
     console.log('Flagship shop created.');
 
-    // 5. Bulk Create Products
-    // Fallback images for products that use local paths (only available in client/public)
-    const categoryFallbacks = {
-      'Shirts': 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80',
-      'Pants': 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80',
-      'Shoes': 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80',
-      'Jackets': 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=80',
-      'Flip Flops': 'https://images.unsplash.com/photo-1603487742131-4160ec999306?w=800&q=80',
-      'T-Shirts': 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=800&q=80',
-      'Luxury': 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800&q=80',
-      'Cosmetics': 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=80',
-    };
-
-    const getProductImage = (p) => {
-      const img = p.image;
-      // If image is a full URL, or local relative path starting with /, use it directly
-      if (img && (img.startsWith('http') || img.startsWith('/'))) return img;
-      // If local path, use category fallback
-      return categoryFallbacks[p.category] || 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80';
-    };
-
-    const productsToCreate = productsSource.map(p => ({
-      id: uuidv4(),
-      title: p.name,
-      description: p.description,
-      images: [getProductImage(p)],
-      price: p.price,
-      category: p.category,
-      gender: p.gender.toLowerCase(),
-      stock: 100,
-      shopId: shop.id,
-      tags: [p.subcategory, p.brand, ...(p.colors || [])].filter(Boolean),
-      sizes: ['S', 'M', 'L', 'XL']
-    }));
-
-    await Product.bulkCreate(productsToCreate);
-    console.log(`${productsToCreate.length} products seeded successfully.`);
-
-    // 6. Create Customer and Vendor Users
+    // 5. Create Customer Users
     const customers = [
       { name: 'Aditya Vajpayee', email: 'avajpayee2005@gmail.com' },
       { name: 'Priya Patel', email: 'priya@gmail.com' },
@@ -106,7 +68,8 @@ const seedData = async () => {
     }
     console.log('Customer users seeded.');
 
-    // 7. Create a Vendor/Shopkeeper User
+    // 6. Create Vendor/Shopkeeper Users & Shops
+    // Vendor 1 (Original Demo Vendor)
     const vendor = await User.create({
       id: uuidv4(),
       name: 'Vendor Demo',
@@ -119,31 +82,107 @@ const seedData = async () => {
       id: uuidv4(),
       name: 'Vendor Hub Store',
       ownerId: vendor.id,
-      description: 'A vendor-run fashion store on DRIPZO.',
+      description: 'The official vendor-run apparel and streetwear hub on DRIPZO.',
       location: { type: 'Point', coordinates: [72.8777, 19.0760], address: 'Bandra, Mumbai' },
       status: 'active',
       isVerified: true
     });
-    console.log('Vendor user and shop seeded.');
 
-    // 7. Create Sample Orders
-    const products = await Product.findAll();
+    // Vendor 2 (Brand New Organic & Minimal Curator)
+    const vendor2 = await User.create({
+      id: uuidv4(),
+      name: 'Kenji Sato',
+      email: 'aurastyle@dripzo.com',
+      password: 'Aditya123',
+      role: 'shopkeeper',
+      phone: '9876543212'
+    });
+    const shop2 = await Shop.create({
+      id: uuidv4(),
+      name: 'AURA Cosmetics & Apparel',
+      ownerId: vendor2.id,
+      description: 'Curator of Japanese streetwear, minimal aesthetics, and organic luxury cosmetics.',
+      location: { 
+        type: 'Point', 
+        coordinates: [77.5946, 12.9716], 
+        address: 'Koramangala, Bengaluru, Karnataka' 
+      },
+      status: 'active',
+      isVerified: true
+    });
+    console.log('Vendor users and shops seeded.');
+
+    // 7. Bulk Create Products with Multi-Vendor Distribution
+    const categoryFallbacks = {
+      'Shirts': 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80',
+      'Pants': 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80',
+      'Shoes': 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80',
+      'Jackets': 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=80',
+      'Flip Flops': 'https://images.unsplash.com/photo-1603487742131-4160ec999306?w=800&q=80',
+      'T-Shirts': 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=800&q=80',
+      'Luxury': 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800&q=80',
+      'Cosmetics': 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=80',
+    };
+
+    const getProductImage = (p) => {
+      const img = p.image;
+      if (img && (img.startsWith('http') || img.startsWith('/'))) return img;
+      return categoryFallbacks[p.category] || 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80';
+    };
+
+    const getShopForProduct = (p, mainShopId, vShopId, v2ShopId) => {
+      if (p.category === 'Cosmetics' || p.brand?.includes('AURA') || p.subcategory?.includes('Korean') || p.subcategory?.includes('Minimal')) {
+        return v2ShopId; // AURA Cosmetics & Apparel
+      }
+      if (p.category === 'Luxury' || p.brand?.includes('STEALTH') || p.brand?.includes('VOID') || p.category === 'Pants' || p.category === 'Shoes') {
+        return vShopId; // Vendor Hub Store
+      }
+      return mainShopId; // DRIPZO Flagship Store
+    };
+
+    const productsToCreate = productsSource.map((p, index) => {
+      const targetShopId = getShopForProduct(p, shop.id, vendorShop.id, shop2.id);
+      const calculatedDiscountPrice = p.discountPrice || Math.round(p.price * 0.85);
+
+      return {
+        id: uuidv4(),
+        title: p.name,
+        description: p.description,
+        images: [getProductImage(p)],
+        price: p.price,
+        discountPrice: calculatedDiscountPrice,
+        category: p.category,
+        gender: p.gender.toLowerCase(),
+        stock: p.stock !== undefined ? p.stock : (50 + (index * 7) % 150),
+        ratings: p.rating || parseFloat((4.0 + ((index * 3) % 10) / 10).toFixed(1)),
+        numReviews: p.reviewsCount || (12 + (index * 17) % 85),
+        shopId: targetShopId,
+        tags: [p.subcategory, p.brand, ...(p.colors || [])].filter(Boolean),
+        sizes: p.sizes || ['S', 'M', 'L', 'XL']
+      };
+    });
+
+    await Product.bulkCreate(productsToCreate);
+    console.log(`${productsToCreate.length} products seeded successfully across shops.`);
+
+    // 8. Create Sample Orders aligned with Shops
+    const productsInDB = await Product.findAll();
     const customerUsers = await User.findAll({ where: { role: 'customer' } });
 
     for (let i = 0; i < customerUsers.length; i++) {
       const user = customerUsers[i];
-      const p1 = products[i % products.length];
-      const p2 = products[(i + 1) % products.length];
+      const p1 = productsInDB[i % productsInDB.length];
+      const p2 = productsInDB[(i + 1) % productsInDB.length];
 
       await Order.create({
         id: uuidv4(),
         userId: user.id,
-        shopId: shop.id,
+        shopId: p1.shopId, // Align order to the product's shop
         products: [
           { productId: p1.id, quantity: 1, size: 'M', price: p1.price },
           { productId: p2.id, quantity: 2, size: 'L', price: p2.price }
         ],
-        totalAmount: Number(p1.price) + (Number(p2.price) * 2) + 50, // 50 for delivery
+        totalAmount: Number(p1.price) + (Number(p2.price) * 2) + 50,
         deliveryFee: 50,
         status: i % 2 === 0 ? 'delivered' : 'pending',
         deliveryAddress: user.addresses[0],
@@ -152,7 +191,7 @@ const seedData = async () => {
         eta: new Date(Date.now() + 86400000) // Tomorrow
       });
     }
-    console.log('Sample orders seeded.');
+    console.log('Sample multi-vendor orders seeded.');
 
     console.log('Seeding completed successfully! 🚀');
     process.exit(0);

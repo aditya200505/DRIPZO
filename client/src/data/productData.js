@@ -591,6 +591,173 @@ const products = [
     image: 'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=800&q=80',
     colors: ['#000000', '#808080'],
   },
+  // ═══════════════════════ NEW FASHION & BEAUTY RELEASES ═══════════════════════
+  {
+    id: 91, name: 'Fuji Blossom Print Shirt', brand: 'K-STYLE TOKYO', price: 1699, category: 'Shirts', gender: 'Men', subcategory: 'Korean fashion shirts',
+    description: 'Relaxed fit printed shirt featuring hand-drawn cherry blossom motifs. Crafted from lightweight rayon.',
+    image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80',
+    colors: ['#ffb6c1', '#ffffff', '#000000'],
+  },
+  {
+    id: 92, name: 'Minimal Linen Overshirt', brand: 'LINEN CO.', price: 1899, category: 'Shirts', gender: 'Men', subcategory: 'Linen shirts',
+    description: 'An understated minimal linen overshirt featuring a drop shoulder and large patch pockets. Highly breathable fabric.',
+    image: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800&q=80',
+    colors: ['#f5f5dc', '#ffffff', '#2f4f4f'],
+  },
+  {
+    id: 93, name: 'Seoul Relaxed Chambray', brand: 'K-STYLE TOKYO', price: 1799, category: 'Shirts', gender: 'Men', subcategory: 'Korean fashion shirts',
+    description: 'Soft-washed cotton chambray shirt with a boxy Korean silhouette and an elegant band collar.',
+    image: 'https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?w=800&q=80',
+    colors: ['#6495ed', '#4682b4'],
+  },
+  {
+    id: 94, name: 'Cyber Grunge Plaid Shirt', brand: 'STREET CORE', price: 2199, category: 'Shirts', gender: 'Unisex', subcategory: 'Y2K shirts',
+    description: 'Heavyweight oversized plaid shirt with distress detailing and metal hardware accents. True Y2K grunge aesthetic.',
+    image: 'https://images.unsplash.com/photo-1516257984-b1b4d707412e?w=800&q=80',
+    colors: ['#8b0000', '#000000', '#696969'],
+  },
+  {
+    id: 95, name: 'Vintage Baggy Carpenter Denim', brand: 'DENIM X', price: 3499, category: 'Pants', gender: 'Men', subcategory: 'Baggy jeans',
+    description: 'Ultra baggy 90s style carpenter pants in a heavily washed indigo denim. Features hammer loop and utility pockets.',
+    image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80',
+    colors: ['#4682b4', '#708090'],
+  },
+  {
+    id: 96, name: 'Techwear Multi-Pocket Cargos', brand: 'STEALTH PRO', price: 2999, category: 'Pants', gender: 'Men', subcategory: 'Streetwear cargos',
+    description: 'Water-resistant tactical cargos featuring adjustable strap buckles and hidden modular compartment pockets.',
+    image: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&q=80',
+    colors: ['#000000', '#2f4f4f', '#556b2f'],
+  },
+  {
+    id: 97, name: 'Draped Wide-Leg Pleated Trousers', brand: 'MODA LUXE', price: 2799, category: 'Pants', gender: 'Women', subcategory: 'Wide leg pants',
+    description: 'Flowy, high-waisted pleated trousers in a lightweight drape fabric. Delivering a luxury magazine-front silhouette.',
+    image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80',
+    colors: ['#ffffff', '#d2b48c', '#000000'],
+  },
+  {
+    id: 98, name: 'Aero Drift Street Sneakers', brand: 'PULSE ATHLETICS', price: 4599, category: 'Shoes', gender: 'Unisex', subcategory: 'Streetwear shoes',
+    description: 'Dynamic knit mesh running sneakers featuring shock-absorbing sole tech and high-contrast styling lines.',
+    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80',
+    colors: ['#ff4500', '#000000', '#ffffff'],
+  },
+  {
+    id: 99, name: 'Monolith Chunky Trainers', brand: 'VOID FOOTWEAR', price: 5499, category: 'Shoes', gender: 'Unisex', subcategory: 'Chunky shoes',
+    description: 'Extreme platform retro trainers in premium white leather with high-traction thick rubber outsoles.',
+    image: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80',
+    colors: ['#ffffff', '#c0c0c0'],
+  },
+  {
+    id: 100, name: 'Heritage Leather High-Tops', brand: 'VOID FOOTWEAR', price: 6299, category: 'Shoes', gender: 'Men', subcategory: 'High-top shoes',
+    description: 'Sleek premium leather high-top sneakers with retro panel stitch lines and padded ankle support collars.',
+    image: 'https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800&q=80',
+    colors: ['#000000', '#ffffff', '#ff3f6c'],
+  },
+  {
+    id: 101, name: 'Midnight Bomber Flux', brand: 'STEALTH PRO', price: 4799, category: 'Jackets', gender: 'Men', subcategory: 'Bomber jackets',
+    description: 'Heavy flight nylon bomber featuring insulated quilted lining, tactical arm zip-pocket, and water-repellent shell.',
+    image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80',
+    colors: ['#000000', '#556b2f'],
+  },
+  {
+    id: 102, name: 'Vintage Denim Sherpa Trucker', brand: 'DENIM X', price: 3899, category: 'Jackets', gender: 'Men', subcategory: 'Denim jackets',
+    description: 'Rigid raw denim trucker jacket fully lined with plush, high-insulation sherpa fleece for ultimate warmth and heritage style.',
+    image: 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=800&q=80',
+    colors: ['#4682b4', '#87ceeb'],
+  },
+  {
+    id: 103, name: 'Hype Cushion Street Slides', brand: 'STREET CORE', price: 1599, category: 'Flip Flops', gender: 'Unisex', subcategory: 'Streetwear slides',
+    description: 'Bold oversized foam slides with thick, supportive ergonomic platforms. Built for superior street fashion comfort.',
+    image: 'https://images.unsplash.com/photo-1603487742131-4160ec999306?w=800&q=80',
+    colors: ['#000000', '#ffffff', '#ff3f6c'],
+  },
+  {
+    id: 104, name: 'Osaka Minimal Sandal', brand: 'K-STYLE TOKYO', price: 1899, category: 'Flip Flops', gender: 'Unisex', subcategory: 'Luxury sandals',
+    description: 'Artisanal double-strap leather sandals with contoured cork footbeds and premium gunmetal buckles.',
+    image: 'https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=800&q=80',
+    colors: ['#8b4513', '#000000', '#f5f5dc'],
+  },
+  {
+    id: 105, name: 'Tokyo Neon Graphic Tee', brand: 'STREET CORE', price: 1499, category: 'T-Shirts', gender: 'Unisex', subcategory: 'Streetwear tshirts',
+    description: 'Heavyweight organic cotton tee decorated with high-density glowing neon Tokyo cyber designs.',
+    image: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=800&q=80',
+    colors: ['#000000', '#ffffff', '#8a2be2'],
+  },
+  {
+    id: 106, name: 'Minimal Waffle Henley Tee', brand: 'BASIC ELITE', price: 1199, category: 'T-Shirts', gender: 'Men', subcategory: 'Minimal tees',
+    description: 'Soft brushed waffle knit cotton tee with a clean three-button henley placket and tailored sleeve cuffs.',
+    image: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80',
+    colors: ['#2f4f4f', '#f5f5dc', '#808080'],
+  },
+  {
+    id: 107, name: 'Sovereign Heavyweight Plain Tee', brand: 'DRIPZO SIGNATURE', price: 1699, category: 'T-Shirts', gender: 'Men', subcategory: 'Luxury plain tees',
+    description: 'Luxuriously thick, pre-shrunk combed supima cotton tee. Boxy relaxed drape, perfect blank staple.',
+    image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80',
+    colors: ['#ffffff', '#000000', '#ff3f6c'],
+  },
+  {
+    id: 108, name: 'Glossy Glass Plumping Lip Oil', brand: 'AURA BEAUTY', price: 1299, category: 'Cosmetics', gender: 'Women', subcategory: 'Lip gloss',
+    description: 'High-shine, non-sticky lip nourishing oil infused with active hyaluronic acid spheres and cherry fruit extracts.',
+    image: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=800&q=80',
+    colors: ['#ffc0cb', '#cc5533', '#ffffff'],
+    volume: '5.5ml',
+    requirement: 'Cruelty Free & Vegan'
+  },
+  {
+    id: 109, name: 'Crushed Velvet Matte Lipstick', brand: 'AURA BEAUTY', price: 1099, category: 'Cosmetics', gender: 'Women', subcategory: 'Matte lipstick',
+    description: 'Weightless matte lipstick featuring intense single-stroke pigments and dynamic hydrating avocado oil.',
+    image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=80',
+    colors: ['#8b0000', '#ff69b4', '#800020'],
+    volume: '4.2g',
+    requirement: '12-Hour Smudge Proof'
+  },
+  {
+    id: 110, name: 'Pure Retinol Botanical Serum', brand: 'AURA BEAUTY', price: 2199, category: 'Cosmetics', gender: 'Unisex', subcategory: 'Face serum',
+    description: 'Advanced anti-aging evening facial serum loaded with 1.5% micro-encapsulated pure retinol and organic aloe juice.',
+    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&q=80',
+    colors: ['#ffd700', '#ffffff'],
+    volume: '30ml',
+    requirement: 'Dermatologist Tested'
+  },
+  {
+    id: 111, name: 'Celestial Oud Perfume Intense', brand: 'AURA BEAUTY', price: 5999, category: 'Cosmetics', gender: 'Unisex', subcategory: 'Luxury perfume',
+    description: 'Opulent and mysterious signature scent blending rich smoked agarwood, sweet Bulgarian rose, and spiced patchouli.',
+    image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&q=80',
+    colors: ['#ffd700', '#000000'],
+    volume: '100ml',
+    requirement: 'Long-Lasting Eau De Parfum'
+  },
+  {
+    id: 112, name: 'Luminous Silk Air Foundation', brand: 'AURA BEAUTY', price: 3299, category: 'Cosmetics', gender: 'Women', subcategory: 'Foundation',
+    description: 'Weightless air-whipped liquid foundation offering custom buildable coverage and a gorgeous dew-lit finish.',
+    image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=80',
+    colors: ['#f5e6d3', '#d2b48c', '#8b7355'],
+    volume: '35ml',
+    requirement: 'Hydrating All-Day Wear'
+  },
+  {
+    id: 113, name: 'Satin Finish Compact Powder', brand: 'AURA BEAUTY', price: 1699, category: 'Cosmetics', gender: 'Women', subcategory: 'Compact powder',
+    description: 'Ultra-fine milled translucent powder designed to instantly blur skin pores, control shine, and lock in makeup setting.',
+    image: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&q=80',
+    colors: ['#d2b48c', '#ffffff'],
+    volume: '12g',
+    requirement: 'Paraben & Talc Free'
+  },
+  {
+    id: 114, name: 'Golden Hour Glow Skincare Kit', brand: 'AURA BEAUTY', price: 4299, category: 'Cosmetics', gender: 'Women', subcategory: 'Skincare kits',
+    description: 'Complete 3-step organic skincare routine: Gentle Cleanser (150ml), Glow Toner (100ml), and Water Jelly Moisturizer (50ml).',
+    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&q=80',
+    colors: ['#ffb6c1', '#ffffff'],
+    volume: '3-Piece Set',
+    requirement: 'Organic & Organic Ingredients'
+  },
+  {
+    id: 115, name: 'Red Carpet Professional Makeup Set', brand: 'AURA BEAUTY', price: 8999, category: 'Cosmetics', gender: 'Women', subcategory: 'Luxury makeup sets',
+    description: 'Curated box of 8 premium vanity staples, including liquid highlighter, eye contour shadow palette, intense liner, and satin lip colors.',
+    image: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&q=80',
+    colors: ['#ffd700', '#ffc0cb', '#000000'],
+    volume: '8-Piece Set',
+    requirement: 'Luxury Professional Vanity Kit'
+  },
 ];
 
 // Category images
