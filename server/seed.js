@@ -169,29 +169,33 @@ const seedData = async () => {
     const productsInDB = await Product.findAll();
     const customerUsers = await User.findAll({ where: { role: 'customer' } });
 
-    for (let i = 0; i < customerUsers.length; i++) {
-      const user = customerUsers[i];
-      const p1 = productsInDB[i % productsInDB.length];
-      const p2 = productsInDB[(i + 1) % productsInDB.length];
+    if (productsInDB.length > 0) {
+      for (let i = 0; i < customerUsers.length; i++) {
+        const user = customerUsers[i];
+        const p1 = productsInDB[i % productsInDB.length];
+        const p2 = productsInDB[(i + 1) % productsInDB.length];
 
-      await Order.create({
-        id: uuidv4(),
-        userId: user.id,
-        shopId: p1.shopId, // Align order to the product's shop
-        products: [
-          { productId: p1.id, quantity: 1, size: 'M', price: p1.price },
-          { productId: p2.id, quantity: 2, size: 'L', price: p2.price }
-        ],
-        totalAmount: Number(p1.price) + (Number(p2.price) * 2) + 50,
-        deliveryFee: 50,
-        status: i % 2 === 0 ? 'delivered' : 'pending',
-        deliveryAddress: user.addresses[0],
-        paymentStatus: i % 2 === 0 ? 'completed' : 'pending',
-        paymentMethod: 'upi',
-        eta: new Date(Date.now() + 86400000) // Tomorrow
-      });
+        await Order.create({
+          id: uuidv4(),
+          userId: user.id,
+          shopId: p1.shopId, // Align order to the product's shop
+          products: [
+            { productId: p1.id, quantity: 1, size: 'M', price: p1.price },
+            { productId: p2.id, quantity: 2, size: 'L', price: p2.price }
+          ],
+          totalAmount: Number(p1.price) + (Number(p2.price) * 2) + 50,
+          deliveryFee: 50,
+          status: i % 2 === 0 ? 'delivered' : 'pending',
+          deliveryAddress: user.addresses[0],
+          paymentStatus: i % 2 === 0 ? 'completed' : 'pending',
+          paymentMethod: 'upi',
+          eta: new Date(Date.now() + 86400000) // Tomorrow
+        });
+      }
+      console.log('Sample multi-vendor orders seeded.');
+    } else {
+      console.log('No products found, skipping sample orders seeding.');
     }
-    console.log('Sample multi-vendor orders seeded.');
 
     console.log('Seeding completed successfully! 🚀');
     process.exit(0);
