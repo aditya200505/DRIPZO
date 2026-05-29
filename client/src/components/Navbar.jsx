@@ -11,6 +11,37 @@ import { useAuth } from '../context/AuthContext';
 
 const placeholders = ["Shirts", "Joggers", "Shoes", "T-shirts", "Jackets", "Cosmetics", "Luxury Wear", "Makeup"];
 
+const menuVariants = {
+  hidden: { opacity: 0, height: 0 },
+  visible: { 
+    opacity: 1, 
+    height: 'auto',
+    transition: {
+      height: { duration: 0.45, ease: [0.16, 1, 0.3, 1] },
+      opacity: { duration: 0.3 },
+      staggerChildren: 0.05,
+      delayChildren: 0.05
+    }
+  },
+  exit: {
+    opacity: 0,
+    height: 0,
+    transition: {
+      height: { duration: 0.35, ease: [0.16, 1, 0.3, 1] },
+      opacity: { duration: 0.25 }
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -16 },
+  visible: { 
+    opacity: 1, 
+    x: 0, 
+    transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] } 
+  },
+};
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -77,12 +108,14 @@ const Navbar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          scrolled ? 'bg-white shadow-soft py-2' : 'bg-white/95 py-3'
+        className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${
+          scrolled 
+            ? 'bg-white/80 backdrop-blur-lg shadow-soft border-secondary/5 py-2' 
+            : 'bg-white/90 backdrop-blur-md border-transparent py-2.5 sm:py-3.5'
         }`}
       >
-        <div className="container mx-auto px-6 flex justify-between items-center">
-          <Link to="/" className="text-2xl font-theater font-bold tracking-[0.15em] text-secondary shrink-0">
+        <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center w-full">
+          <Link to="/" className="text-xl sm:text-2xl font-theater font-bold tracking-[0.15em] text-secondary shrink-0 select-none">
             DRIP<span className="text-primary">ZO</span>
           </Link>
 
@@ -110,7 +143,7 @@ const Navbar = () => {
               <div className="flex items-center gap-1 shrink-0 border-r border-borderLight pr-2.5 mr-0.5">
                 <span className="text-[11px] font-theater font-bold tracking-wider text-secondary">D<span className="text-primary">Z</span></span>
               </div>
-              <Search size={16} className="text-textMuted group-hover:text-primary transition-colors" />
+              <Search size={16} strokeWidth={1.5} className="text-textMuted group-hover:text-primary transition-colors" />
               <div className="relative h-4 overflow-hidden flex-1">
                  <AnimatePresence mode="wait">
                     <motion.p
@@ -128,18 +161,31 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Icons */}
-          <div className="flex items-center space-x-4">
-            <button onClick={() => setIsSearchOpen(true)} className="text-secondary hover:text-primary transition-colors p-1.5 lg:hidden">
-              <Search size={20} />
+          {/* Icons Group */}
+          <div className="flex items-center gap-0.5 sm:gap-1.5 md:gap-3">
+            <button 
+              onClick={() => setIsSearchOpen(true)} 
+              className="text-secondary hover:text-primary transition-all duration-300 p-1.5 sm:p-2 rounded-full hover:bg-secondary/5 flex items-center justify-center lg:hidden"
+            >
+              <Search size={20} strokeWidth={1.4} />
             </button>
-            <Link to={isAuthenticated ? "/dashboard" : "/auth"} className="text-secondary hover:text-primary transition-colors p-1.5">
-              <User size={20} />
+            
+            <Link 
+              to={isAuthenticated ? "/dashboard" : "/auth"} 
+              className="text-secondary hover:text-primary transition-all duration-300 p-1.5 sm:p-2 rounded-full hover:bg-secondary/5 flex items-center justify-center"
+            >
+              <User size={20} strokeWidth={1.4} />
             </Link>
-            <Link to="/dashboard?tab=wishlist" className="relative text-secondary hover:text-primary transition-colors p-1.5">
-              <Heart size={20} />
+            
+            <Link 
+              to="/dashboard?tab=wishlist" 
+              className="relative text-secondary hover:text-primary transition-all duration-300 p-1.5 sm:p-2 rounded-full hover:bg-secondary/5 flex items-center justify-center"
+            >
+              <Heart size={20} strokeWidth={1.4} />
               {wishlist.length > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center font-bold">{wishlist.length}</span>
+                <span className="absolute top-1 right-1 translate-x-0.5 -translate-y-0.5 bg-red-500 text-white text-[8px] rounded-full h-3.5 w-3.5 flex items-center justify-center font-bold border border-white">
+                  {wishlist.length}
+                </span>
               )}
             </Link>
             
@@ -147,11 +193,11 @@ const Navbar = () => {
             <div className="relative" ref={notificationRef}>
               <button 
                 onClick={() => setIsNotificationsOpen(!isNotificationsOpen)}
-                className="relative text-secondary hover:text-primary transition-colors p-1.5 hidden sm:block"
+                className="relative text-secondary hover:text-primary transition-all duration-300 p-1.5 sm:p-2 rounded-full hover:bg-secondary/5 flex items-center justify-center hidden sm:flex"
               >
-                <Bell size={20} />
+                <Bell size={20} strokeWidth={1.4} />
                 {notifications.some(n => !n.read) && (
-                  <span className="absolute top-1 right-1 bg-primary w-2 h-2 rounded-full border-2 border-white"></span>
+                  <span className="absolute top-1 right-1 translate-x-0.5 -translate-y-0.5 bg-primary w-1.5 h-1.5 rounded-full border border-white"></span>
                 )}
               </button>
               
@@ -168,7 +214,6 @@ const Navbar = () => {
                       <button 
                         onClick={() => {
                           markAllNotificationsAsRead();
-                          // setIsNotificationsOpen(false); // Optional: close dropdown
                         }}
                         className="text-xs text-primary font-bold hover:underline"
                       >
@@ -222,33 +267,46 @@ const Navbar = () => {
                 )}
               </AnimatePresence>
             </div>
-            <button className="relative text-secondary hover:text-primary transition-colors p-1.5" onClick={() => setIsCartOpen(true)}>
-              <ShoppingBag size={20} />
+            
+            <button 
+              className="relative text-secondary hover:text-primary transition-all duration-300 p-1.5 sm:p-2 rounded-full hover:bg-secondary/5 flex items-center justify-center" 
+              onClick={() => setIsCartOpen(true)}
+            >
+              <ShoppingBag size={20} strokeWidth={1.4} />
               {cart.length > 0 && (
-                <span className="absolute -top-1 -right-1 bg-primary text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center font-bold">
+                <span className="absolute top-1 right-1 translate-x-0.5 -translate-y-0.5 bg-primary text-white text-[8px] rounded-full h-3.5 w-3.5 flex items-center justify-center font-bold border border-white">
                   {cart.reduce((total, item) => total + item.quantity, 0)}
                 </span>
               )}
             </button>
-            <button className="md:hidden text-secondary p-1.5" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-              {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            
+            <button 
+              className="md:hidden text-secondary p-1.5 sm:p-2 rounded-full hover:bg-secondary/5 flex items-center justify-center transition-all duration-300" 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? (
+                <X size={20} strokeWidth={1.4} />
+              ) : (
+                <Menu size={20} strokeWidth={1.4} />
+              )}
             </button>
           </div>
         </div>
 
         {/* Border Line */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-borderLight"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-borderLight/40"></div>
 
         {/* Mobile Menu */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden overflow-hidden bg-white border-t border-borderLight"
+              variants={menuVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="md:hidden overflow-hidden bg-white/95 backdrop-blur-lg border-t border-borderLight/60 shadow-lg"
             >
-              <div className="px-6 py-4 flex flex-col space-y-1">
+              <div className="px-6 py-5 flex flex-col space-y-1">
                 {[
                   { label: 'Men', to: '/men' },
                   { label: 'Women', to: '/women' },
@@ -256,29 +314,45 @@ const Navbar = () => {
                   { label: 'Luxury', to: '/collections?category=Luxury' },
                   { label: 'Beauty', to: '/collections?category=Cosmetics' },
                 ].map(item => (
-                  <Link key={item.label} to={item.to} 
-                    onClick={() => setIsMobileMenuOpen(false)} 
-                    className="py-3 text-secondary hover:text-primary transition-colors font-semibold text-sm uppercase tracking-wider border-b border-borderLight"
-                  >
-                    {item.label}
-                  </Link>
+                  <motion.div key={item.label} variants={itemVariants}>
+                    <Link 
+                      to={item.to} 
+                      onClick={() => setIsMobileMenuOpen(false)} 
+                      className="py-3.5 text-secondary hover:text-primary transition-colors font-semibold text-sm uppercase tracking-wider border-b border-borderLight/50 flex items-center group font-body"
+                    >
+                      <span className="relative overflow-hidden inline-block py-0.5">
+                        {item.label}
+                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                      </span>
+                    </Link>
+                  </motion.div>
                 ))}
                 
-                <Link to="/dashboard?tab=wishlist" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="py-3 text-secondary hover:text-primary transition-colors font-semibold text-sm uppercase tracking-wider border-b border-borderLight flex items-center justify-between"
-                >
-                  <span>My Wishlist</span>
-                  <span className="bg-red-500/10 text-red-500 text-xs px-2.5 py-0.5 rounded-full font-bold">{wishlist.length}</span>
-                </Link>
+                <motion.div variants={itemVariants}>
+                  <Link to="/dashboard?tab=wishlist" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="py-3.5 text-secondary hover:text-primary transition-colors font-semibold text-sm uppercase tracking-wider border-b border-borderLight/50 flex items-center justify-between font-body group"
+                  >
+                    <span className="relative overflow-hidden inline-block py-0.5">
+                      My Wishlist
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </span>
+                    <span className="bg-red-500/10 text-red-500 text-xs px-2.5 py-0.5 rounded-full font-bold">{wishlist.length}</span>
+                  </Link>
+                </motion.div>
                 
-                <Link to={isAuthenticated ? "/dashboard" : "/auth"} 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="py-3.5 text-primary hover:text-primaryDark transition-colors font-bold text-sm uppercase tracking-wider flex items-center justify-between"
-                >
-                  <span>{isAuthenticated ? 'My Dashboard' : 'Login / Sign Up'}</span>
-                  <ArrowRight size={16} />
-                </Link>
+                <motion.div variants={itemVariants}>
+                  <Link to={isAuthenticated ? "/dashboard" : "/auth"} 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="py-4 text-primary hover:text-primaryDark transition-colors font-bold text-sm uppercase tracking-wider flex items-center justify-between font-body group"
+                  >
+                    <span className="relative overflow-hidden inline-block py-0.5">
+                      {isAuthenticated ? 'My Dashboard' : 'Login / Sign Up'}
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primaryDark transition-all duration-300 group-hover:w-full"></span>
+                    </span>
+                    <ArrowRight size={16} className="transform group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </motion.div>
               </div>
             </motion.div>
           )}
