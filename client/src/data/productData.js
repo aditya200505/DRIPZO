@@ -1,701 +1,632 @@
-// Centralized product data for DRIPZO — White theme, INR pricing
+// Centralized product data for DRIPZO — Brand New Premium Portfolio (INR Pricing)
 const products = [
-  // ═══════════════════════ SHIRTS ═══════════════════════
+  // ═══════════════════════ SHIRTS (IDs 1-15) ═══════════════════════
   {
-    id: 1, name: 'Midnight Oxford Shirt', brand: 'DRIPZO SIGNATURE', price: 1999, category: 'Shirts', gender: 'Men', subcategory: 'Formal Shirts',
-    description: 'A premium slim-fit oxford shirt with a modern spread collar.',
-    image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80',
-    colors: ['#1a1a2e', '#e0e0e0', '#4a90d9'],
-  },
-  {
-    id: 2, name: 'Neon Linen Shirt', brand: 'LINEN CO.', price: 1499, category: 'Shirts', gender: 'Men', subcategory: 'Summer Shirts',
-    description: 'Lightweight linen shirt with a relaxed fit. Breathable and stylish.',
+    id: 1, name: 'Seoul Oversized Linen Shirt', brand: 'K-STYLE TOKYO', price: 1899, category: 'Shirts', gender: 'Men', subcategory: 'Oversized shirts',
+    description: 'Ultra-lightweight premium linen overshirt with drop shoulders and a relaxed drape. Crafted for summer comfort.',
     image: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800&q=80',
-    colors: ['#f5f5dc', '#87ceeb', '#2f4f4f'],
+    colors: ['#faf0e6', '#87ceeb', '#2f4f4f'],
   },
   {
-    id: 3, name: 'Cyber Denim Shirt', brand: 'DENIM X', price: 2299, category: 'Shirts', gender: 'Men', subcategory: 'Casual Shirts',
-    description: 'Washed denim shirt with a futuristic cut. Snap buttons and raw hem.',
+    id: 2, name: 'Minimal Mandarin Collar Linen', brand: 'LINEN CO.', price: 1699, category: 'Shirts', gender: 'Men', subcategory: 'Linen shirts',
+    description: 'Clean-cut linen shirt featuring an elegant band collar and tailored cuffs. Delivers a relaxed yet refined look.',
+    image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80',
+    colors: ['#ffffff', '#f5f5dc', '#708090'],
+  },
+  {
+    id: 3, name: 'Y2K Cyberpunk Zip Shirt', brand: 'STREET CORE', price: 2299, category: 'Shirts', gender: 'Unisex', subcategory: 'Y2K shirts',
+    description: 'Avant-garde streetwear shirt with full-zip front closure, custom metal hardware, and dual asymmetric zip pockets.',
     image: 'https://images.unsplash.com/photo-1588359348347-9bc6cbbb689e?w=800&q=80',
-    colors: ['#4169e1', '#708090'],
+    colors: ['#000000', '#696969'],
   },
   {
-    id: 4, name: 'Silk Horizon Shirt', brand: 'SILK & CO.', price: 3499, category: 'Shirts', gender: 'Women', subcategory: 'Formal Shirts',
-    description: 'Luxurious silk-blend shirt with an iridescent sheen.',
-    image: 'https://images.unsplash.com/photo-1598554747436-c9293d6a588f?w=800&q=80',
-    colors: ['#c9b1ff', '#1a1a2e', '#f0e68c'],
+    id: 4, name: 'Fuji Cherry Blossom Print', brand: 'K-STYLE TOKYO', price: 1999, category: 'Shirts', gender: 'Men', subcategory: 'Printed shirts',
+    description: 'Stunning premium printed shirt with watercolor sakura flower prints on luxury breathable rayon base fabric.',
+    image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80',
+    colors: ['#ffc0cb', '#ffffff', '#0a0a0a'],
   },
   {
-    id: 5, name: 'Minimal Stripe Shirt', brand: 'BASIC ELITE', price: 1299, category: 'Shirts', gender: 'Men', subcategory: 'Striped Shirts',
-    description: 'Clean lines, subtle stripes. Engineered for everyday elegance.',
+    id: 5, name: 'Milano Silk Dress Shirt', brand: 'MODA LUXE', price: 3499, category: 'Shirts', gender: 'Men', subcategory: 'Formal luxury shirts',
+    description: 'Exquisite silk-blend formal shirt featuring a subtle satin sheen, mother-of-pearl buttons, and structured spread collar.',
     image: 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&q=80',
-    colors: ['#ffffff', '#000000'],
+    colors: ['#1a1a2e', '#ffffff', '#800020'],
   },
   {
-    id: 6, name: 'Flannel Grid Shirt', brand: 'GRID WEAR', price: 1799, category: 'Shirts', gender: 'Men', subcategory: 'Check Shirts',
-    description: 'Soft brushed flannel with a modern grid pattern. Warm and cozy.',
+    id: 6, name: 'Stealth Tech utility Shirt', brand: 'STEALTH PRO', price: 2499, category: 'Shirts', gender: 'Men', subcategory: 'Streetwear shirts',
+    description: 'Water-resistant nylon-blend tactical shirt with hidden magnetic flap pockets and back ventilated mesh paneling.',
     image: 'https://images.unsplash.com/photo-1589310243389-96a5483213a8?w=800&q=80',
-    colors: ['#8b0000', '#2f4f4f', '#f5f5dc'],
+    colors: ['#0a0a0a', '#2f4f4f'],
   },
   {
-    id: 7, name: 'Tech Mesh Shirt', price: 2199, category: 'Shirts', gender: 'Men', subcategory: 'Half Sleeve Shirts',
-    description: 'Performance mesh panels meet streetwear design.',
-    image: 'https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?w=800&q=80',
-    colors: ['#000000', '#ff3f6c'],
+    id: 7, name: 'Kyoto Minimalist Drop Shirt', brand: 'K-STYLE TOKYO', price: 1799, category: 'Shirts', gender: 'Women', subcategory: 'Minimal shirts',
+    description: 'Clean-front boxy linen blouse with dolman sleeves and dynamic raw edge hems. Minimalist luxury fashion.',
+    image: 'https://images.unsplash.com/photo-1598554747436-c9293d6a588f?w=800&q=80',
+    colors: ['#ffffff', '#d2b48c', '#808080'],
+  },
+  {
+    id: 8, name: 'Asymmetric Drape Chambray', brand: 'K-STYLE TOKYO', price: 1899, category: 'Shirts', gender: 'Unisex', subcategory: 'Korean fashion shirts',
+    description: 'Japanese washed-cotton indigo chambray shirt featuring an off-center closure and fluid curved front panels.',
+    image: 'https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?w=800&q=80',
+    colors: ['#6495ed', '#4682b4'],
+  },
+  {
+    id: 9, name: 'Vintage Acid Plaid Overshirt', brand: 'STREET CORE', price: 2199, category: 'Shirts', gender: 'Men', subcategory: 'Y2K shirts',
+    description: 'Heavily acid-washed plaid overshirt featuring frayed cuffs and custom metal safety pin accents. Retro grunge staple.',
+    image: 'https://images.unsplash.com/photo-1516257984-b1b4d707412e?w=800&q=80',
+    colors: ['#8b0000', '#0a0a0a'],
+  },
+  {
+    id: 10, name: 'Pacific Linen resort Shirt', brand: 'LINEN CO.', price: 1599, category: 'Shirts', gender: 'Men', subcategory: 'Linen shirts',
+    description: 'Classic open resort collar shirt in washed organic linen. Designed for warm coastal escapes.',
+    image: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800&q=80',
+    colors: ['#faf0e6', '#afeeee', '#556b2f'],
+  },
+  {
+    id: 11, name: 'Sovereign Silk Satin Shirt', brand: 'MODA LUXE', price: 3299, category: 'Shirts', gender: 'Women', subcategory: 'Formal luxury shirts',
+    description: 'Satin-finish pure silk dress shirt with a relaxed tailored silhouette and premium French cuffs.',
+    image: 'https://images.unsplash.com/photo-1598554747436-c9293d6a588f?w=800&q=80',
+    colors: ['#c9b1ff', '#0a0a0a', '#ffffff'],
+  },
+  {
+    id: 12, name: 'Cyberpunk Utility Harness Shirt', brand: 'STEALTH PRO', price: 2599, category: 'Shirts', gender: 'Men', subcategory: 'Streetwear shirts',
+    description: 'Technical techwear shirt featuring integrated criss-cross tactical straps and matte D-ring attachments.',
+    image: 'https://images.unsplash.com/photo-1589310243389-96a5483213a8?w=800&q=80',
+    colors: ['#0a0a0a', '#4a4a4a'],
+  },
+  {
+    id: 13, name: 'Osaka Boxy Band-Collar', brand: 'K-STYLE TOKYO', price: 1799, category: 'Shirts', gender: 'Men', subcategory: 'Korean fashion shirts',
+    description: 'Boxy-cut short sleeve band collar shirt in a rich textured cotton gauze. Refined minimalist luxury.',
+    image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80',
+    colors: ['#ffffff', '#f5f5dc', '#000080'],
+  },
+  {
+    id: 14, name: 'Abstract Geometrix Printed', brand: 'MODA LUXE', price: 1999, category: 'Shirts', gender: 'Men', subcategory: 'Printed shirts',
+    description: 'Stunning geometric abstract printed shirt on clean premium viscose. Flows beautifully and keeps you cool.',
+    image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80',
+    colors: ['#282c3f', '#ff3f6c', '#ffffff'],
+  },
+  {
+    id: 15, name: 'Zen Minimalist Linen Tunic', brand: 'LINEN CO.', price: 1899, category: 'Shirts', gender: 'Women', subcategory: 'Minimal shirts',
+    description: 'Elongated clean linen tunic with deep side slit details. Blends eastern minimal draping with Western style.',
+    image: 'https://images.unsplash.com/photo-1598554747436-c9293d6a588f?w=800&q=80',
+    colors: ['#faf0e6', '#2f4f4f'],
   },
 
-  // ═══════════════════════ PANTS ═══════════════════════
+  // ═══════════════════════ PANTS (IDs 16-30) ═══════════════════════
   {
-    id: 8, name: 'Quantum Street Pants', brand: 'STREET CORE', price: 2499, category: 'Pants', gender: 'Men', subcategory: 'Joggers',
-    description: 'Tapered jogger-style pants with hidden zip pockets.',
-    image: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&q=80',
-    colors: ['#1a1a1a', '#4a4a4a', '#2f4f4f'],
-  },
-  {
-    id: 9, name: 'Raw Selvedge Denim', brand: 'DENIM X', price: 3999, category: 'Pants', gender: 'Men', subcategory: 'Jeans',
-    description: 'Japanese selvedge denim, raw and untreated.',
+    id: 16, name: 'Quantum Baggy Jeans', brand: 'DENIM X', price: 2999, category: 'Pants', gender: 'Men', subcategory: 'Baggy jeans',
+    description: 'Washed wide-leg baggy skater denim featuring artful pocket detailing and custom silver rivet buttons.',
     image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80',
-    colors: ['#191970', '#2f4f4f'],
+    colors: ['#4682b4', '#191970', '#808080'],
   },
   {
-    id: 10, name: 'Cargo Stealth Pants', brand: 'STEALTH PRO', price: 2899, category: 'Pants', gender: 'Men', subcategory: 'Cargo Pants',
-    description: 'Multi-pocket cargo pants with a sleek silhouette.',
+    id: 17, name: 'Apex Stealth Cargo Pants', brand: 'STEALTH PRO', price: 3299, category: 'Pants', gender: 'Men', subcategory: 'Cargo pants',
+    description: 'Premium technical cargos built with 4-way stretch fabrics, dual side utility pockets, and adjustable cuff tabs.',
     image: 'https://images.unsplash.com/photo-1517438476312-10d79c077509?w=800&q=80',
-    colors: ['#556b2f', '#1a1a1a', '#8b7355'],
+    colors: ['#0a0a0a', '#556b2f', '#708090'],
   },
   {
-    id: 11, name: 'Pleated Wide-Leg Trousers', brand: 'MODA LUXE', price: 3299, category: 'Pants', gender: 'Women', subcategory: 'Formal Trousers',
-    description: 'Elegant wide-leg trousers with a high waist and deep pleats.',
+    id: 18, name: 'Seoul Pleated Drape Trousers', brand: 'K-STYLE TOKYO', price: 2799, category: 'Pants', gender: 'Men', subcategory: 'Korean trousers',
+    description: 'High-waisted elegant pleated trousers with an effortless relaxed drape, perfect for modern smart-casual styling.',
     image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80',
-    colors: ['#d2b48c', '#1a1a1a', '#808080'],
+    colors: ['#faf0e6', '#0a0a0a', '#808080'],
   },
   {
-    id: 12, name: 'Tech Joggers Pro', brand: 'STREET CORE', price: 1999, category: 'Pants', gender: 'Men', subcategory: 'Joggers',
-    description: 'Engineered joggers with 4-way stretch and reflective details.',
-    image: 'https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=800&q=80',
-    colors: ['#000000', '#333333', '#696969'],
+    id: 19, name: 'Infinite Wide-Leg Denim', brand: 'DENIM X', price: 3499, category: 'Pants', gender: 'Women', subcategory: 'Denim collections',
+    description: 'Extra-long wide-leg jeans in a rigid raw selvedge denim. Beautiful pinstitch folds.',
+    image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80',
+    colors: ['#191970', '#c0c0c0'],
   },
   {
-    id: 13, name: 'Corduroy Drift Pants', brand: 'RETRO WEAR', price: 2199, category: 'Pants', gender: 'Men', subcategory: 'Casual Pants',
-    description: 'Plush corduroy with a relaxed straight leg. Retro meets modern.',
+    id: 20, name: 'Osaka Modular Streetwear Cargos', brand: 'STREET CORE', price: 2999, category: 'Pants', gender: 'Unisex', subcategory: 'Streetwear cargos',
+    description: 'Heavy cotton drop-crotch cargo pants with strap buckles and multi-tiered utility compartments.',
+    image: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&q=80',
+    colors: ['#0a0a0a', '#2f4f4f'],
+  },
+  {
+    id: 21, name: 'Vanguard Slim Stretch Chino', brand: 'BASIC ELITE', price: 1999, category: 'Pants', gender: 'Men', subcategory: 'Slim fit pants',
+    description: 'Tailored slim chinos made from organic cotton with a hint of performance elastane for seamless mobility.',
     image: 'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=800&q=80',
-    colors: ['#8b4513', '#2f4f4f', '#d2691e'],
+    colors: ['#d2b48c', '#000080', '#0a0a0a'],
   },
   {
-    id: 14, name: 'Slim Chino Elite', brand: 'ELITE BASICS', price: 1799, category: 'Pants', gender: 'Men', subcategory: 'Chinos',
-    description: 'Perfectly tailored slim-fit chinos in a premium stretch cotton.',
-    image: '/slim_chino_elite_1778656617767.png',
-    colors: ['#f5f5dc', '#2f4f4f', '#000080'],
+    id: 22, name: 'Zen Knit Lounge Joggers', brand: 'BASIC ELITE', price: 1799, category: 'Pants', gender: 'Men', subcategory: 'Joggers',
+    description: 'Waffle-knit heavy cotton loungewear joggers featuring a supportive elastic drawcord waist and zip pockets.',
+    image: 'https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=800&q=80',
+    colors: ['#696969', '#0a0a0a', '#f5f5f6'],
+  },
+  {
+    id: 23, name: 'Vintage Carpenter Baggy Jeans', brand: 'DENIM X', price: 3299, category: 'Pants', gender: 'Men', subcategory: 'Baggy jeans',
+    description: 'Heavyweight stonewashed denim carpenter jeans with authentic utility side loops and triple-needle flatlock seams.',
+    image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80',
+    colors: ['#4682b4', '#708090'],
+  },
+  {
+    id: 24, name: 'Kyoto Pleated Wide-Leg', brand: 'K-STYLE TOKYO', price: 2899, category: 'Pants', gender: 'Women', subcategory: 'Wide leg pants',
+    description: 'Fluid, flowing wide-leg trousers featuring front structural pleats and hidden vertical side pockets.',
+    image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80',
+    colors: ['#ffffff', '#ffc0cb', '#0a0a0a'],
+  },
+  {
+    id: 25, name: 'Cyberpunk Buckle Cargo Pants', brand: 'STEALTH PRO', price: 3499, category: 'Pants', gender: 'Men', subcategory: 'Streetwear cargos',
+    description: 'Techwear cargo trousers with heavy straps, adjustable ankle cuffs, and matte black steel release buckles.',
+    image: 'https://images.unsplash.com/photo-1517438476312-10d79c077509?w=800&q=80',
+    colors: ['#0a0a0a', '#ff3f6c'],
+  },
+  {
+    id: 26, name: 'Minimalist Drape Trousers', brand: 'K-STYLE TOKYO', price: 2699, category: 'Pants', gender: 'Women', subcategory: 'Korean trousers',
+    description: 'Clean flat-front trousers with double back welt pockets and an ultra-modern straight leg silhouette.',
+    image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80',
+    colors: ['#faf0e6', '#808080'],
+  },
+  {
+    id: 27, name: 'Fleece Tech-Joggers Pro', brand: 'STEALTH PRO', price: 2199, category: 'Pants', gender: 'Men', subcategory: 'Joggers',
+    description: 'Polartec fleece joggers with reinforced ripstop nylon knee panels and taped waterproof zippers.',
+    image: 'https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=800&q=80',
+    colors: ['#0a0a0a', '#2f4f4f'],
+  },
+  {
+    id: 28, name: 'Sovereign Raw Selvedge Slim', brand: 'DENIM X', price: 4299, category: 'Pants', gender: 'Men', subcategory: 'Slim fit pants',
+    description: 'Japanese raw denim jeans in a tailored slim-fit cut. Delivers beautiful individual fading over time.',
+    image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80',
+    colors: ['#191970'],
+  },
+  {
+    id: 29, name: 'Osaka Linen Wide Trousers', brand: 'K-STYLE TOKYO', price: 2499, category: 'Pants', gender: 'Women', subcategory: 'Wide leg pants',
+    description: 'High-waisted wide trousers in heavy washed organic linen. Blends minimal comfort with sharp structure.',
+    image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80',
+    colors: ['#ffffff', '#d2b48c', '#556b2f'],
+  },
+  {
+    id: 30, name: 'Stealth Tapered Tech Joggers', brand: 'STEALTH PRO', price: 2499, category: 'Pants', gender: 'Men', subcategory: 'Joggers',
+    description: 'Ultra-lightweight nylon shell utility pants with highly tapered ankle elastic. Designed for urban agility.',
+    image: 'https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=800&q=80',
+    colors: ['#0a0a0a', '#696969'],
   },
 
-  // ═══════════════════════ SHOES ═══════════════════════
+  // ═══════════════════════ SHOES (IDs 31-45) ═══════════════════════
   {
-    id: 15, name: 'Neon Pulse Sneakers', brand: 'PULSE ATHLETICS', price: 4999, category: 'Shoes', gender: 'Men', subcategory: 'Sneakers',
-    description: 'High-performance sneakers with neon accents and ultra-cushioned soles.',
+    id: 31, name: 'Aero Drift running Sneakers', brand: 'PULSE ATHLETICS', price: 4599, category: 'Shoes', gender: 'Unisex', subcategory: 'Running shoes',
+    description: 'Dynamic knit mesh running sneakers featuring shock-absorbing sole tech and high-contrast color lines.',
     image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80',
-    colors: ['#ff4500', '#ffffff', '#000000'],
+    colors: ['#ff4500', '#0a0a0a', '#ffffff'],
   },
   {
-    id: 16, name: 'Synapse Runners', brand: 'PULSE ATHLETICS', price: 3999, category: 'Shoes', gender: 'Women', subcategory: 'Running Shoes',
-    description: 'Lightweight running shoes with a reactive foam midsole.',
+    id: 32, name: 'Monolith Chunky Trainers', brand: 'VOID FOOTWEAR', price: 5499, category: 'Shoes', gender: 'Unisex', subcategory: 'Chunky shoes',
+    description: 'Extreme platform retro trainers in premium white leather with high-traction thick rubber outsoles.',
+    image: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80',
+    colors: ['#ffffff', '#ff3f6c', '#c0c0c0'],
+  },
+  {
+    id: 33, name: 'Heritage Leather High-Tops', brand: 'VOID FOOTWEAR', price: 6299, category: 'Shoes', gender: 'Men', subcategory: 'High-top shoes',
+    description: 'Sleek premium leather high-top sneakers with retro panel stitching and padded ankle support collars.',
+    image: 'https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800&q=80',
+    colors: ['#0a0a0a', '#ffffff', '#ff3f6c'],
+  },
+  {
+    id: 34, name: 'Vanguard Tech Sneakers', brand: 'PULSE ATHLETICS', price: 4999, category: 'Shoes', gender: 'Men', subcategory: 'Sneakers',
+    description: 'Sleek slip-on mesh trainers with structured geometric support bands and high-rebound responsive foam midsoles.',
+    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80',
+    colors: ['#0a0a0a', '#ffd700'],
+  },
+  {
+    id: 35, name: 'Zen Minimalist Casual Shoes', brand: 'BASIC ELITE', price: 2499, category: 'Shoes', gender: 'Men', subcategory: 'Casual shoes',
+    description: 'Clean-front cupsole sneakers in soft matte microfiber. Deliver a timeless smart casual presence.',
+    image: 'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=800&q=80',
+    colors: ['#ffffff', '#0a0a0a'],
+  },
+  {
+    id: 36, name: 'Tokyo Streetwear High-Tops', brand: 'VOID FOOTWEAR', price: 5999, category: 'Shoes', gender: 'Unisex', subcategory: 'Streetwear shoes',
+    description: 'Distressed canvas high-top shoes featuring steel zip accents, raw edge seams, and a vulcanized shell sole.',
+    image: 'https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800&q=80',
+    colors: ['#696969', '#0a0a0a'],
+  },
+  {
+    id: 37, name: 'Sovereign Leather Sneakers', brand: 'MODA LUXE', price: 6999, category: 'Shoes', gender: 'Men', subcategory: 'Luxury sneakers',
+    description: 'Handcrafted premium leather sneakers sourced from Italian hides. Low-profile minimal luxury aesthetic.',
+    image: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=800&q=80',
+    colors: ['#ffffff', '#8b4513', '#0a0a0a'],
+  },
+  {
+    id: 38, name: 'Kinetic Performance Runners', brand: 'PULSE ATHLETICS', price: 3999, category: 'Shoes', gender: 'Women', subcategory: 'Running shoes',
+    description: 'Ultra-lightweight mesh shoes with carbon-fiber speed plates and dynamic traction tread outsoles.',
     image: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80',
     colors: ['#ff69b4', '#ffffff'],
   },
   {
-    id: 17, name: 'Void Combat Boots', brand: 'VOID FOOTWEAR', price: 6499, category: 'Shoes', gender: 'Men', subcategory: 'Boots',
-    description: 'Military-inspired combat boots with a chunky sole.',
+    id: 39, name: 'Void Combat Chunky Boots', brand: 'VOID FOOTWEAR', price: 7499, category: 'Shoes', gender: 'Men', subcategory: 'Chunky shoes',
+    description: 'Military-grade combat boots loaded with oversized lugged rubber platforms and water-resistant leather.',
     image: 'https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=800&q=80',
-    colors: ['#000000', '#2f4f4f'],
+    colors: ['#0a0a0a'],
   },
   {
-    id: 18, name: 'Classic Leather Loafers', brand: 'MODA LUXE', price: 5499, category: 'Shoes', gender: 'Men', subcategory: 'Formal Shoes',
-    description: 'Hand-stitched leather loafers with a modern slim profile.',
+    id: 40, name: 'Hype Cushion Street Sneakers', brand: 'STREET CORE', price: 4799, category: 'Shoes', gender: 'Unisex', subcategory: 'Streetwear shoes',
+    description: 'Thick-sole futuristic shoes with neon strap locks and semi-translucent air chambers.',
+    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80',
+    colors: ['#ff4500', '#00ff00', '#0a0a0a'],
+  },
+  {
+    id: 41, name: 'Osaka Minimalist Loafers', brand: 'K-STYLE TOKYO', price: 5299, category: 'Shoes', gender: 'Men', subcategory: 'Casual shoes',
+    description: 'Fine split-suede step-down loafers with rubber insert soles. Beautifully simple, luxurious finish.',
     image: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=800&q=80',
-    colors: ['#8b4513', '#1a1a1a'],
-  },
-  {
-    id: 19, name: 'Air Max Retro', brand: 'PULSE ATHLETICS', price: 3799, category: 'Shoes', gender: 'Men', subcategory: 'Sneakers',
-    description: 'Retro-inspired air-cushioned sneakers. Visible air unit.',
-    image: 'https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800&q=80',
-    colors: ['#ffffff', '#808080', '#ff4500'],
-  },
-  {
-    id: 20, name: 'Canvas High-Tops', brand: 'BASIC ELITE', price: 1999, category: 'Shoes', gender: 'Unisex', subcategory: 'Casual Shoes',
-    description: 'Classic canvas high-tops with a rubber toe cap.',
-    image: 'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=800&q=80',
-    colors: ['#ffffff', '#000000', '#ff0000'],
-  },
-  {
-    id: 21, name: 'Suede Desert Boots', price: 4499, category: 'Shoes', gender: 'Men', subcategory: 'Boots',
-    description: 'Premium suede desert boots with crepe rubber soles.',
-    image: 'https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=800&q=80',
     colors: ['#d2b48c', '#8b4513'],
   },
+  {
+    id: 42, name: 'Satin Ribbon Platform Trainers', brand: 'VOID FOOTWEAR', price: 5499, category: 'Shoes', gender: 'Women', subcategory: 'Chunky shoes',
+    description: 'High-gloss white trainers featuring elegant oversized satin lace ties and soft orthopedic footbeds.',
+    image: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80',
+    colors: ['#ffffff', '#ffc0cb'],
+  },
+  {
+    id: 43, name: 'Cyberpunk Neoprene Runners', brand: 'PULSE ATHLETICS', price: 5299, category: 'Shoes', gender: 'Men', subcategory: 'Sneakers',
+    description: 'Sock-like neoprene running sneakers with integrated compression molds and structural strap frames.',
+    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80',
+    colors: ['#0a0a0a', '#8a2be2'],
+  },
+  {
+    id: 44, name: 'Retro High-Top Basketball', brand: 'VOID FOOTWEAR', price: 6499, category: 'Shoes', gender: 'Men', subcategory: 'High-top shoes',
+    description: 'Heritage premium basketball shoes in full-grain color block panels. Classic court presence.',
+    image: 'https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800&q=80',
+    colors: ['#ffffff', '#000080', '#ff3f6c'],
+  },
+  {
+    id: 45, name: 'Prestige Italian Derby Shoes', brand: 'MODA LUXE', price: 8999, category: 'Shoes', gender: 'Men', subcategory: 'Luxury sneakers',
+    description: 'Hand-burnished Italian calfskin leather Derby shoes with custom blake-stitched leather outsoles.',
+    image: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=800&q=80',
+    colors: ['#0a0a0a', '#8b4513'],
+  },
 
-  // ═══════════════════════ JACKETS ═══════════════════════
+  // ═══════════════════════ JACKETS (IDs 46-60) ═══════════════════════
   {
-    id: 22, name: 'Midnight Obsidian Jacket', price: 5999, category: 'Jackets', gender: 'Men', subcategory: 'Winter Jackets',
-    description: 'Sleek matte-black jacket with quilted lining and stand collar.',
+    id: 46, name: 'Varsity Wool Letterman Jacket', brand: 'STREET CORE', price: 4599, category: 'Jackets', gender: 'Men', subcategory: 'Varsity jackets',
+    description: 'Premium heavyweight wool body varsity jacket featuring custom vegan leather sleeves and Chenille embroidery.',
     image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=80',
-    colors: ['#000000', '#1a1a2e'],
+    colors: ['#000080', '#ffffff', '#8b0000'],
   },
   {
-    id: 23, name: 'Matrix Long Coat', price: 7999, category: 'Jackets', gender: 'Men', subcategory: 'Overcoats',
-    description: 'Floor-length overcoat with a dramatic silhouette.',
-    image: 'https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?w=800&q=80',
-    colors: ['#1a1a1a', '#2f4f4f'],
-  },
-  {
-    id: 24, name: 'Bomber Flux Jacket', price: 4499, category: 'Jackets', gender: 'Men', subcategory: 'Bomber Jackets',
-    description: 'Nylon bomber jacket with ribbed cuffs and a reversible design.',
+    id: 47, name: 'Midnight Bomber Flux', brand: 'STEALTH PRO', price: 4799, category: 'Jackets', gender: 'Men', subcategory: 'Bomber jackets',
+    description: 'Heavy flight-nylon bomber jacket featuring quilted insulation, utility arm pocket, and custom storm flaps.',
     image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80',
-    colors: ['#556b2f', '#000000', '#ff4500'],
+    colors: ['#0a0a0a', '#556b2f'],
   },
   {
-    id: 25, name: 'Puffer Cloud Jacket', price: 5499, category: 'Jackets', gender: 'Women', subcategory: 'Puffer Jackets',
-    description: 'Ultra-lightweight puffer with 800-fill down.',
-    image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=80',
-    colors: ['#4169e1', '#000000', '#ffffff'],
+    id: 48, name: 'Zen Oversized Sherpa Coat', brand: 'K-STYLE TOKYO', price: 5499, category: 'Jackets', gender: 'Women', subcategory: 'Oversized jackets',
+    description: 'Double-breasted oversized coat in plush, dense textured sherpa. Combines soft luxury with cozy volume.',
+    image: 'https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?w=800&q=80',
+    colors: ['#faf0e6', '#d2b48c'],
   },
   {
-    id: 26, name: 'Denim Trucker Jacket', price: 3499, category: 'Jackets', gender: 'Men', subcategory: 'Denim Jackets',
-    description: 'Classic trucker jacket in washed denim. Sherpa-lined.',
-    image: 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=800&q=80',
-    colors: ['#4682b4', '#f5f5dc'],
-  },
-  {
-    id: 27, name: 'Windbreaker Pulse', price: 2999, category: 'Jackets', gender: 'Unisex', subcategory: 'Windbreakers',
-    description: 'Lightweight windbreaker with color-blocked panels.',
+    id: 49, name: 'Quantum Stealth Windbreaker', brand: 'STEALTH PRO', price: 3499, category: 'Jackets', gender: 'Men', subcategory: 'Streetwear jackets',
+    description: 'Matte technical windbreaker with highly breathable side ventilation panels and internal harness carry systems.',
     image: 'https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=800&q=80',
-    colors: ['#00ced1', '#ff4500', '#ffffff'],
+    colors: ['#0a0a0a', '#708090'],
   },
   {
-    id: 28, name: 'Leather Biker Jacket', price: 9999, category: 'Jackets', gender: 'Men', subcategory: 'Leather Jackets',
-    description: 'Full-grain leather biker jacket with asymmetric zip.',
-    image: '/leather_biker_jacket_1778656638643.png',
-    colors: ['#000000', '#8b0000'],
+    id: 50, name: 'Vintage Denim Sherpa Trucker', brand: 'DENIM X', price: 3899, category: 'Jackets', gender: 'Men', subcategory: 'Denim jackets',
+    description: 'Rigid washed-indigo denim trucker jacket lined with thick high-insulation sherpa lining. Clean vintage look.',
+    image: 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=800&q=80',
+    colors: ['#4682b4', '#ffffff'],
+  },
+  {
+    id: 51, name: 'Seoul Asymmetric Trench Coat', brand: 'K-STYLE TOKYO', price: 6999, category: 'Jackets', gender: 'Unisex', subcategory: 'Korean fashion jackets',
+    description: 'Elegant loose-drape Korean gabardine trench coat featuring off-center buttons and an adjustable waist belt.',
+    image: 'https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?w=800&q=80',
+    colors: ['#808080', '#0a0a0a', '#d2b48c'],
+  },
+  {
+    id: 52, name: 'Alpine Quilted Puffer Jacket', brand: 'STEALTH PRO', price: 5999, category: 'Jackets', gender: 'Men', subcategory: 'Winter jackets',
+    description: 'Insulated puffer jacket packed with 800-fill organic down. Water-repellent matte nylon shell.',
+    image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=80',
+    colors: ['#0a0a0a', '#1e3f20', '#ffffff'],
+  },
+  {
+    id: 53, name: 'Cyberpunk Neo-Biker Leather', brand: 'STREET CORE', price: 9999, category: 'Jackets', gender: 'Men', subcategory: 'Streetwear jackets',
+    description: 'Heavy full-grain cowhide leather jacket with dynamic structural paneling and premium asymmetric chrome zippers.',
+    image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=80',
+    colors: ['#0a0a0a', '#8b0000'],
+  },
+  {
+    id: 54, name: 'Retro Grid Fleece Pullover', brand: 'BASIC ELITE', price: 2799, category: 'Jackets', gender: 'Men', subcategory: 'Winter jackets',
+    description: 'Thick thermal grid-pattern fleece pullover with quick-snap buttons and retro color-blocked trim.',
+    image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80',
+    colors: ['#000080', '#228b22', '#ffffff'],
+  },
+  {
+    id: 55, name: 'Osaka Draped Kimono Cardigan', brand: 'K-STYLE TOKYO', price: 3299, category: 'Jackets', gender: 'Unisex', subcategory: 'Korean fashion jackets',
+    description: 'Heavyweight organic cotton drape knit kimono jacket with front open styling. Clean, comfortable elegance.',
+    image: 'https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=800&q=80',
+    colors: ['#0a0a0a', '#faf0e6'],
+  },
+  {
+    id: 56, name: 'Monolith Crop Denim Jacket', brand: 'DENIM X', price: 3499, category: 'Jackets', gender: 'Women', subcategory: 'Denim jackets',
+    description: 'Cropped rigid denim jacket with heavily distressed edges and premium oversized silver hardware buttons.',
+    image: 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=800&q=80',
+    colors: ['#87ceeb', '#ffffff'],
+  },
+  {
+    id: 57, name: 'Stealth Hooded Shell Jacket', brand: 'STEALTH PRO', price: 4999, category: 'Jackets', gender: 'Men', subcategory: 'Streetwear jackets',
+    description: 'Waterproof 3-layer laminated shell jacket with custom laser-cut ventilation holes and dry-zip pockets.',
+    image: 'https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=800&q=80',
+    colors: ['#0a0a0a', '#4b5320'],
+  },
+  {
+    id: 58, name: 'Urban Flight Coach Jacket', brand: 'STREET CORE', price: 2999, category: 'Jackets', gender: 'Men', subcategory: 'Varsity jackets',
+    description: 'Lightweight nylon shell coach jacket with clean matte snap-front closure and DRIPZO athletic graphic prints.',
+    image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=80',
+    colors: ['#0a0a0a', '#8b0000', '#ffffff'],
+  },
+  {
+    id: 59, name: 'Tokyo Neon Bomber Flux', brand: 'STREET CORE', price: 4999, category: 'Jackets', gender: 'Unisex', subcategory: 'Bomber jackets',
+    description: 'Insulated satin-finish bomber featuring high-density glowing neon graphic print detailing across the back.',
+    image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80',
+    colors: ['#0a0a0a', '#8a2be2'],
+  },
+  {
+    id: 60, name: 'Prestige Double Coat', brand: 'MODA LUXE', price: 7999, category: 'Jackets', gender: 'Men', subcategory: 'Oversized jackets',
+    description: 'Double-breasted overcoat tailored from premium heavyweight wool-blend fabrics. Unstructured shoulders.',
+    image: 'https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?w=800&q=80',
+    colors: ['#2f2f2f', '#d2b48c'],
   },
 
-  // ═══════════════════════ FLIP FLOPS ═══════════════════════
+  // ═══════════════════════ FLIP FLOPS (IDs 61-75) ═══════════════════════
   {
-    id: 29, name: 'Beach Wave Slides', price: 999, category: 'Flip Flops', gender: 'Unisex', subcategory: 'Slides',
-    description: 'Ergonomic slides with a contoured footbed.',
-    image: '/beach_wave_slides.png',
-    colors: ['#000000', '#ffffff', '#00ced1'],
+    id: 61, name: 'Hype Cushion Street Slides', brand: 'STREET CORE', price: 1599, category: 'Flip Flops', gender: 'Unisex', subcategory: 'Streetwear slides',
+    description: 'Ergonomic EVA slides featuring a double-density platform and custom ribbed high-traction outsoles.',
+    image: '/leather_pool_slides.png',
+    colors: ['#0a0a0a', '#ffffff', '#ff3f6c'],
   },
   {
-    id: 30, name: 'Reef Comfort Flip Flops', price: 799, category: 'Flip Flops', gender: 'Men', subcategory: 'Classic Flip Flops',
-    description: 'Soft rubber flip flops with arch support.',
-    image: '/reef_comfort_flip_flops.png',
-    colors: ['#8b4513', '#d2b48c'],
-  },
-  {
-    id: 31, name: 'Sport Slide Pro', price: 1299, category: 'Flip Flops', gender: 'Men', subcategory: 'Sport Slides',
-    description: 'Athletic-inspired slides with a massage footbed.',
-    image: '/sport_slide_pro.png',
-    colors: ['#000000', '#ff4500'],
-  },
-  {
-    id: 32, name: 'Velvet Lounge Slides', price: 1499, category: 'Flip Flops', gender: 'Women', subcategory: 'Lounge Slides',
-    description: 'Plush velvet slides with a memory foam insole.',
-    image: '/velvet_lounge_slides.png',
-    colors: ['#800020', '#000000', '#c9b1ff'],
-  },
-  {
-    id: 33, name: 'Eco Cork Sandals', price: 1099, category: 'Flip Flops', gender: 'Women', subcategory: 'Sandals',
-    description: 'Sustainable cork footbed sandals with recycled straps.',
+    id: 62, name: 'Osaka Cork Strap Sandals', brand: 'K-STYLE TOKYO', price: 1899, category: 'Flip Flops', gender: 'Unisex', subcategory: 'Luxury sandals',
+    description: 'Artisanal minimal sandals built with real contoured cork footbeds and premium washed suede buckles.',
     image: '/eco_cork_sandals.png',
-    colors: ['#d2b48c', '#556b2f'],
+    colors: ['#8b4513', '#faf0e6', '#d2b48c'],
   },
   {
-    id: 34, name: 'Platform Cloud Slides', price: 1399, category: 'Flip Flops', gender: 'Women', subcategory: 'Platform Slides',
-    description: 'Chunky platform slides with cloud-soft cushioning.',
+    id: 63, name: 'Zen Wave Minimal Slides', brand: 'BASIC ELITE', price: 1199, category: 'Flip Flops', gender: 'Unisex', subcategory: 'Minimal flipflops',
+    description: 'Monolithic soft-foam flip flops with a clean minimalist wave pattern across the supportive footbed.',
+    image: '/beach_wave_slides.png',
+    colors: ['#ffffff', '#0a0a0a', '#afeeee'],
+  },
+  {
+    id: 64, name: 'Pacific Beach Flip Flops', brand: 'BASIC ELITE', price: 899, category: 'Flip Flops', gender: 'Men', subcategory: 'Beach flipflops',
+    description: 'Flexible natural rubber flip flops featuring water-channeling grooves and highly comfortable woven straps.',
+    image: '/reef_comfort_flip_flops.png',
+    colors: ['#2f4f4f', '#0a0a0a', '#ffd700'],
+  },
+  {
+    id: 65, name: 'Velvet Lounge Memory Slides', brand: 'MODA LUXE', price: 1499, category: 'Flip Flops', gender: 'Women', subcategory: 'Streetwear slides',
+    description: 'Plush velvet slide sandals containing orthopedic memory-foam cushioning for absolute relaxation.',
+    image: '/velvet_lounge_slides.png',
+    colors: ['#800020', '#c9b1ff', '#0a0a0a'],
+  },
+  {
+    id: 66, name: 'Kyoto Rope Thong Sandals', brand: 'K-STYLE TOKYO', price: 1399, category: 'Flip Flops', gender: 'Women', subcategory: 'Luxury sandals',
+    description: 'Intricately hand-woven rope sandals supported by a flexible jute-lined base. Modern vacation style.',
+    image: '/rope_thong_sandals.png',
+    colors: ['#d2b48c', '#faf0e6'],
+  },
+  {
+    id: 67, name: 'Prestige Leather Pool Slides', brand: 'MODA LUXE', price: 2499, category: 'Flip Flops', gender: 'Men', subcategory: 'Luxury sandals',
+    description: 'Sleek slides handcrafted with full-grain Italian leather bands and highly supportive molded rubber bases.',
+    image: '/leather_pool_slides.png',
+    colors: ['#0a0a0a', '#8b4513'],
+  },
+  {
+    id: 68, name: 'Kinetic Tech Strap Sandals', brand: 'PULSE ATHLETICS', price: 1999, category: 'Flip Flops', gender: 'Unisex', subcategory: 'Luxury sandals',
+    description: 'Athletic sandals with three adjustable web straps, cushioned neoprene linings, and high-impact heel bubbles.',
+    image: '/sport_slide_pro.png',
+    colors: ['#0a0a0a', '#ff4500'],
+  },
+  {
+    id: 69, name: 'Cloud Platform Slides', brand: 'VOID FOOTWEAR', price: 1499, category: 'Flip Flops', gender: 'Women', subcategory: 'Streetwear slides',
+    description: 'Chunky platform slides utilizing ultra-soft responsive cushioning. Delivers a walking-on-clouds step.',
     image: '/platform_cloud_slides.png',
-    colors: ['#ffffff', '#ffc0cb', '#000000'],
+    colors: ['#ffffff', '#ffc0cb', '#0a0a0a'],
+  },
+  {
+    id: 70, name: 'Eco Cork Dual Strap', brand: 'LINEN CO.', price: 1699, category: 'Flip Flops', gender: 'Women', subcategory: 'Luxury sandals',
+    description: 'Eco-conscious dual strap sandals made with recycled micro-buckles and breathable natural cork.',
+    image: '/eco_cork_sandals.png',
+    colors: ['#556b2f', '#faf0e6'],
+  },
+  {
+    id: 71, name: 'Hype Wave Graphic Slides', brand: 'STREET CORE', price: 1699, category: 'Flip Flops', gender: 'Men', subcategory: 'Streetwear slides',
+    description: 'Limited edition streetwear slides printed with bold fluid wave designs across the top bridge straps.',
+    image: '/leather_pool_slides.png',
+    colors: ['#0a0a0a', '#ffffff'],
+  },
+  {
+    id: 72, name: 'Osaka Minimal Thong sandal', brand: 'K-STYLE TOKYO', price: 1599, category: 'Flip Flops', gender: 'Women', subcategory: 'Minimal flipflops',
+    description: 'Clean minimalist slide thong sandals featuring slim micro-straps and structured square-toe footbeds.',
+    image: '/rope_thong_sandals.png',
+    colors: ['#0a0a0a', '#ffffff'],
+  },
+  {
+    id: 73, name: 'Floral Cushioned Slides', brand: 'BASIC ELITE', price: 999, category: 'Flip Flops', gender: 'Women', subcategory: 'Beach flipflops',
+    description: 'Feminine poolside slides decorated with molded pink floral arrangements. Highly resilient waterproof design.',
+    image: '/womens_floral_flip_flops.png',
+    colors: ['#ffb6c1', '#ffffff'],
+  },
+  {
+    id: 74, name: 'Vanguard Sport Slide Pro', brand: 'PULSE ATHLETICS', price: 1499, category: 'Flip Flops', gender: 'Men', subcategory: 'Streetwear slides',
+    description: 'Performance-minded recovery slides with customized arch contours and muscle-massaging textured footbeds.',
+    image: '/sport_slide_pro.png',
+    colors: ['#0a0a0a', '#ff4500'],
+  },
+  {
+    id: 75, name: 'Swiss Leather Lounge Slides', brand: 'MODA LUXE', price: 2999, category: 'Flip Flops', gender: 'Men', subcategory: 'Luxury sandals',
+    description: 'Ultra-premium cross-strap slides tailored in supple calfskin leather with dynamic stitch details.',
+    image: '/leather_pool_slides.png',
+    colors: ['#0a0a0a', '#2f4f4f'],
   },
 
-  // ═══════════════════════ T-SHIRTS ═══════════════════════
+  // ═══════════════════════ T-SHIRTS (IDs 76-90) ═══════════════════════
   {
-    id: 35, name: 'Cyberpunk Graphic Tee', price: 1299, category: 'T-Shirts', gender: 'Men', subcategory: 'Graphic Tees',
-    description: 'Heavyweight cotton tee with cyberpunk-inspired graphic print.',
+    id: 76, name: 'Tokyo Neon Cyberpunk Tee', brand: 'STREET CORE', price: 1499, category: 'T-Shirts', gender: 'Unisex', subcategory: 'Streetwear tshirts',
+    description: 'Heavyweight organic cotton tee printed with dynamic, high-density glowing neon cyber Tokyo designs.',
     image: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=800&q=80',
-    colors: ['#000000', '#ff3f6c', '#8a2be2'],
+    colors: ['#0a0a0a', '#ffffff', '#8a2be2'],
   },
   {
-    id: 36, name: 'Essential Crew Neck', price: 899, category: 'T-Shirts', gender: 'Unisex', subcategory: 'Basic Tees',
-    description: 'The perfect everyday tee. Premium cotton, pre-shrunk.',
+    id: 77, name: 'Sovereign Heavyweight Plain', brand: 'DRIPZO SIGNATURE', price: 1699, category: 'T-Shirts', gender: 'Men', subcategory: 'Luxury plain tees',
+    description: 'Luxuriously thick, pre-shrunk combed supima cotton tee. Boxy relaxed drape, perfect blank wardrobe staple.',
     image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80',
-    colors: ['#ffffff', '#000000', '#808080', '#ff4500'],
+    colors: ['#ffffff', '#0a0a0a', '#ff3f6c'],
   },
   {
-    id: 37, name: 'Vintage Wash Tee', price: 1199, category: 'T-Shirts', gender: 'Men', subcategory: 'Vintage Tees',
-    description: 'Garment-dyed tee with a lived-in feel.',
-    image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80',
-    colors: ['#87ceeb', '#ffa07a', '#98fb98'],
-  },
-  {
-    id: 38, name: 'Oversized Graphic Tee', price: 1599, category: 'T-Shirts', gender: 'Unisex', subcategory: 'Oversized Tees',
-    description: 'Boxy oversized tee with bold back print.',
-    image: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=800&q=80',
-    colors: ['#000000', '#ffffff'],
-  },
-  {
-    id: 39, name: 'Henley Textured Tee', price: 1399, category: 'T-Shirts', gender: 'Men', subcategory: 'Henley Tees',
-    description: 'Three-button henley in a textured waffle knit.',
+    id: 78, name: 'Minimal Waffle Henley Tee', brand: 'BASIC ELITE', price: 1199, category: 'T-Shirts', gender: 'Men', subcategory: 'Minimal tees',
+    description: 'Soft brushed cotton in an open waffle knit. Simple three-button placket neckline and ribbed sleeves.',
     image: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80',
-    colors: ['#2f4f4f', '#d2b48c', '#800020'],
+    colors: ['#2f4f4f', '#f5f5dc', '#808080'],
   },
   {
-    id: 40, name: 'Acid Wash Drop Tee', price: 1499, category: 'T-Shirts', gender: 'Men', subcategory: 'Streetwear Tees',
-    description: 'Acid-washed tee with drop shoulders.',
-    image: 'https://images.unsplash.com/photo-1562157873-818bc0726f68?w=800&q=80',
-    colors: ['#696969', '#000000'],
+    id: 79, name: 'Zen Soft Crewneck Tee', brand: 'BASIC ELITE', price: 899, category: 'T-Shirts', gender: 'Unisex', subcategory: 'Minimal tees',
+    description: 'Supremely soft bamboo-blend crewneck tee. Highly breathable and anti-microbial nature.',
+    image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80',
+    colors: ['#ffffff', '#0a0a0a', '#808080'],
   },
   {
-    id: 41, name: 'Pocket Logo Tee', price: 999, category: 'T-Shirts', gender: 'Men', subcategory: 'Basic Tees',
-    description: 'Clean pocket tee with an embroidered DRIPZO logo.',
+    id: 80, name: 'Vintage Acid Wash Graphic', brand: 'STREET CORE', price: 1599, category: 'T-Shirts', gender: 'Unisex', subcategory: 'Graphic printed tees',
+    description: 'Oversized heavy drop-shoulder tee detailed with vintage acid washing and large abstract chest graphics.',
+    image: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=800&q=80',
+    colors: ['#696969', '#8b0000'],
+  },
+  {
+    id: 81, name: 'Anime Neo-Tokyo Print', brand: 'STREET CORE', price: 1499, category: 'T-Shirts', gender: 'Unisex', subcategory: 'Anime tees',
+    description: 'Original anime print oversized tee featuring detailed vaporwave manga-front artwork. Vibrant colors.',
+    image: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=800&q=80',
+    colors: ['#0a0a0a', '#ffc0cb', '#ffffff'],
+  },
+  {
+    id: 82, name: 'Osaka Pocket Logo Tee', brand: 'K-STYLE TOKYO', price: 1299, category: 'T-Shirts', gender: 'Men', subcategory: 'Oversized tees',
+    description: 'Boxy streetwear tee containing a deep drop chest pocket and clean embroidered DRIPZO monogram.',
     image: 'https://images.unsplash.com/photo-1554568218-0f1715e72254?w=800&q=80',
-    colors: ['#ffffff', '#000000', '#ff3f6c'],
+    colors: ['#ffffff', '#0a0a0a', '#ff3f6c'],
   },
   {
-    id: 42, name: 'Mesh Layer Tee', price: 1799, category: 'T-Shirts', gender: 'Men', subcategory: 'Streetwear Tees',
-    description: 'Semi-transparent mesh overlay tee. Two-layer construction.',
+    id: 83, name: 'Vintage Distressed Band Tee', brand: 'STREET CORE', price: 1599, category: 'T-Shirts', gender: 'Unisex', subcategory: 'Graphic printed tees',
+    description: 'Lived-in look vintage wash t-shirt featuring distressed necklines and washed retro concert prints.',
+    image: 'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=800&q=80',
+    colors: ['#0a0a0a', '#808080'],
+  },
+  {
+    id: 84, name: 'Kyoto Mercerized Plain Tee', brand: 'K-STYLE TOKYO', price: 1899, category: 'T-Shirts', gender: 'Men', subcategory: 'Luxury plain tees',
+    description: 'Crafted from mercerized cotton for a luxurious silk-like drape and crisp clean collar structure.',
+    image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80',
+    colors: ['#ffffff', '#0a0a0a', '#000080'],
+  },
+  {
+    id: 85, name: 'Vintage Wash Drop-shoulder', brand: 'BASIC ELITE', price: 1299, category: 'T-Shirts', gender: 'Men', subcategory: 'Oversized tees',
+    description: 'Garment-dyed vintage boxy tee with high-tension double-rib neck lines. Highly durable threadwork.',
+    image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80',
+    colors: ['#87ceeb', '#ffa07a', '#2f4f4f'],
+  },
+  {
+    id: 86, name: 'Stealth Tech Mesh panel Tee', brand: 'STEALTH PRO', price: 1999, category: 'T-Shirts', gender: 'Men', subcategory: 'Streetwear tshirts',
+    description: 'Integrated techwear tee containing subtle side mesh breathing panels and custom flatlock seam structures.',
     image: 'https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?w=800&q=80',
-    colors: ['#000000', '#ffffff'],
+    colors: ['#0a0a0a', '#4a4a4a'],
+  },
+  {
+    id: 87, name: 'Akira Cyberpunk Graphic', brand: 'STREET CORE', price: 1599, category: 'T-Shirts', gender: 'Unisex', subcategory: 'Graphic printed tees',
+    description: 'Bold back-print graphic tee celebrating cybernetic retro design styles. Heavyweight 240GSM cotton.',
+    image: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=800&q=80',
+    colors: ['#0a0a0a', '#ffffff'],
+  },
+  {
+    id: 88, name: 'Zen Slub Cotton pocket Tee', brand: 'BASIC ELITE', price: 999, category: 'T-Shirts', gender: 'Men', subcategory: 'Minimal tees',
+    description: 'Slub texture organic cotton pocket tee. Clean minimal luxury look for absolute daily comfort.',
+    image: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80',
+    colors: ['#2f4f4f', '#ffffff', '#ffd700'],
+  },
+  {
+    id: 89, name: 'Prestige Heavy Cotton Blank', brand: 'MODA LUXE', price: 1799, category: 'T-Shirts', gender: 'Men', subcategory: 'Luxury plain tees',
+    description: 'Super-heavyweight combed cotton tee featuring a boxy Italian fit. Elegant minimalist look.',
+    image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80',
+    colors: ['#0a0a0a', '#ffffff', '#d2b48c'],
+  },
+  {
+    id: 90, name: 'Vanguard Striped Ringer Tee', brand: 'BASIC ELITE', price: 1199, category: 'T-Shirts', gender: 'Women', subcategory: 'Minimal tees',
+    description: 'Retro ringer tee with subtle horizontal stripes, ribbed sleeve hems, and premium stretch yarn.',
+    image: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=800&q=80',
+    colors: ['#ffffff', '#000080', '#ff3f6c'],
   },
 
-  // ═══════════════════════ LUXURY ═══════════════════════
+  // ═══════════════════════ LUXURY (IDs 91-100) ═══════════════════════
   {
-    id: 43, name: 'Italian Cashmere Overcoat', price: 18999, category: 'Luxury', gender: 'Men', subcategory: 'Luxury Outerwear',
-    description: 'Hand-tailored in Milan. 100% pure cashmere with silk lining.',
+    id: 91, name: 'Italian Cashmere Overcoat', price: 18999, category: 'Luxury', gender: 'Men', subcategory: 'Luxury Outerwear',
+    description: 'Hand-tailored in Milan from 100% pure cashmere fabric. Featuring complete premium silk inner lining.',
     image: 'https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?w=800&q=80',
     colors: ['#2f2f2f', '#d2b48c'],
     isLuxury: true,
   },
   {
-    id: 44, name: 'Swiss Chronograph Watch', price: 19999, category: 'Luxury', gender: 'Men', subcategory: 'Luxury Watches',
-    description: 'Precision Swiss movement, sapphire crystal, titanium case.',
+    id: 92, name: 'Swiss Chronograph Watch', price: 19999, category: 'Luxury', gender: 'Men', subcategory: 'Luxury Watches',
+    description: 'Precision Swiss mechanical movement watch with scratch-resistant sapphire crystal and titanium link strap.',
     image: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800&q=80',
-    colors: ['#c0c0c0', '#000000'],
+    colors: ['#c0c0c0', '#0a0a0a'],
     isLuxury: true,
   },
   {
-    id: 45, name: 'Leather Weekender Bag', price: 12999, category: 'Luxury', gender: 'Unisex', subcategory: 'Luxury Bags',
-    description: 'Full-grain vegetable-tanned leather. Handcrafted in Florence.',
+    id: 93, name: 'Leather Florence Weekender', brand: 'MODA LUXE', price: 12999, category: 'Luxury', gender: 'Unisex', subcategory: 'Luxury Bags',
+    description: 'Handcrafted Florence travel duffle bag tailored from rich vegetable-tanned full-grain luxury leather.',
     image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&q=80',
     colors: ['#8b4513', '#2f2f2f'],
     isLuxury: true,
   },
   {
-    id: 46, name: 'Silk Pocket Square Set', price: 5999, category: 'Luxury', gender: 'Men', subcategory: 'Luxury Accessories',
-    description: 'Set of 4 hand-rolled Italian silk pocket squares.',
+    id: 94, name: 'Italian Silk Pocket Squares', brand: 'MODA LUXE', price: 5999, category: 'Luxury', gender: 'Men', subcategory: 'Luxury Accessories',
+    description: 'Elegant set of 4 hand-rolled pure silk pocket squares styled with complex traditional jacquard designs.',
     image: 'https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?w=800&q=80',
     colors: ['#800020', '#000080', '#006400'],
     isLuxury: true,
   },
   {
-    id: 47, name: 'Designer Sunglasses', price: 9999, category: 'Luxury', gender: 'Unisex', subcategory: 'Luxury Eyewear',
-    description: 'Polarized titanium frames with gradient UV lenses.',
+    id: 95, name: 'Polarized Titanium Eyewear', brand: 'MODA LUXE', price: 9999, category: 'Luxury', gender: 'Unisex', subcategory: 'Luxury Eyewear',
+    description: 'Featherweight Japanese titanium sunglasses featuring high-performance polarized gradient UV lenses.',
     image: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=800&q=80',
-    colors: ['#000000', '#c0c0c0'],
+    colors: ['#0a0a0a', '#ffd700'],
     isLuxury: true,
   },
   {
-    id: 48, name: 'Premium Leather Belt', price: 6999, category: 'Luxury', gender: 'Men', subcategory: 'Luxury Accessories',
-    description: 'Double-stitched full-grain leather with brushed gold buckle.',
+    id: 96, name: 'Gold-Buckled Bridle Belt', brand: 'MODA LUXE', price: 6999, category: 'Luxury', gender: 'Men', subcategory: 'Luxury Accessories',
+    description: 'Traditional English bridle leather belt accented with an elegant hand-brushed solid brass gold buckle.',
     image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80',
-    colors: ['#000000', '#8b4513'],
+    colors: ['#0a0a0a', '#8b4513'],
     isLuxury: true,
   },
-
-  // ═══════════════════════ COSMETICS ═══════════════════════
   {
-    id: 49, name: 'Velvet Matte Lipstick', price: 1299, category: 'Cosmetics', gender: 'Women', subcategory: 'Lips',
-    description: 'Long-lasting velvet matte finish. 12-hour wear.',
-    image: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=800&q=80',
-    colors: ['#8b0000', '#ff69b4', '#cc5533'],
-    volume: '3.8g',
-    requirement: 'For All Skin Types'
-  },
-  {
-    id: 50, name: 'Luxury Foundation Kit', price: 2999, category: 'Cosmetics', gender: 'Women', subcategory: 'Face',
-    description: 'Buildable coverage with skin-loving ingredients.',
-    image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=80',
-    colors: ['#f5e6d3', '#d2b48c', '#8b7355'],
-    volume: '30ml',
-    requirement: 'Dermatologist Tested'
-  },
-  {
-    id: 51, name: 'Eye Shadow Palette', price: 2499, category: 'Cosmetics', gender: 'Women', subcategory: 'Eyes',
-    description: '18 shades of shimmer and matte. Ultra-pigmented.',
-    image: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&q=80',
-    colors: ['#d4a574', '#8b6914', '#c9a0dc'],
-    volume: '18 Shades',
-    requirement: 'Paraben Free'
-  },
-  {
-    id: 52, name: 'Hydrating Face Serum', price: 1799, category: 'Cosmetics', gender: 'Unisex', subcategory: 'Skincare',
-    description: 'Hyaluronic acid + Vitamin C. Glowing skin in 7 days.',
-    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&q=80',
-    colors: ['#ffd700', '#ffffff'],
-    volume: '30ml',
-    requirement: 'Suitable for All Skin'
-  },
-  {
-    id: 53, name: 'Fragrance Collection', price: 4999, category: 'Cosmetics', gender: 'Unisex', subcategory: 'Fragrance',
-    description: 'Three signature scents. Eau de parfum, 50ml each.',
-    image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&q=80',
-    colors: ['#c9b1ff', '#ffd700', '#ff69b4'],
-    volume: '3 x 50ml',
-    requirement: 'Long Lasting'
-  },
-  {
-    id: 54, name: 'Nail Art Premium Set', price: 1499, category: 'Cosmetics', gender: 'Women', subcategory: 'Nails',
-    description: '12 premium gel polishes with UV lamp. Salon quality.',
-    image: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&q=80',
-    colors: ['#ff3f6c', '#8a2be2', '#ffd700'],
-    volume: '12 Colors',
-    requirement: 'Chip Resistant'
-  },
-
-  // ═══════════════════════ MORE SHIRTS ═══════════════════════
-  {
-    id: 55, name: 'Hawaiian Print Shirt', price: 1599, category: 'Shirts', gender: 'Men', subcategory: 'Summer Shirts',
-    description: 'Tropical print relaxed-fit shirt. Perfect for vacations.',
-    image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80',
-    colors: ['#228b22', '#ffa500', '#ffffff'],
-  },
-  {
-    id: 56, name: 'Chambray Button-Down', price: 1899, category: 'Shirts', gender: 'Women', subcategory: 'Casual Shirts',
-    description: 'Soft chambray with a classic button-down collar.',
-    image: 'https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?w=800&q=80',
-    colors: ['#6495ed', '#f5f5dc'],
-  },
-  {
-    id: 57, name: 'Band Collar Linen Shirt', price: 1699, category: 'Shirts', gender: 'Men', subcategory: 'Summer Shirts',
-    description: 'Mandarin collar linen shirt. Minimal and elegant.',
-    image: 'https://images.unsplash.com/photo-1589310243389-96a5483213a8?w=800&q=80',
-    colors: ['#f5f5dc', '#000000', '#87ceeb'],
-  },
-  {
-    id: 58, name: 'Checked Flannel Overshirt', price: 2299, category: 'Shirts', gender: 'Men', subcategory: 'Check Shirts',
-    description: 'Heavy-weight flannel overshirt with chest pockets.',
-    image: 'https://images.unsplash.com/photo-1516257984-b1b4d707412e?w=800&q=80',
-    colors: ['#8b0000', '#2f4f4f', '#000000'],
-  },
-
-  // ═══════════════════════ MORE PANTS ═══════════════════════
-  {
-    id: 59, name: 'Wide-Leg Linen Pants', price: 2199, category: 'Pants', gender: 'Women', subcategory: 'Casual Pants',
-    description: 'Flowy wide-leg trousers in premium linen. Effortless style.',
-    image: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800&q=80',
-    colors: ['#f5f5dc', '#d2b48c', '#ffffff'],
-  },
-  {
-    id: 60, name: 'Retro Track Pants', price: 1599, category: 'Pants', gender: 'Men', subcategory: 'Track Pants',
-    description: 'Side-stripe track pants with elastic waist. Sporty meets street.',
-    image: 'https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=800&q=80',
-    colors: ['#000080', '#ffffff', '#ff4500'],
-  },
-  {
-    id: 61, name: 'Smart Jogger Trousers', price: 2799, category: 'Pants', gender: 'Men', subcategory: 'Joggers',
-    description: 'Tailored jogger-style trousers. Office to evening ready.',
-    image: 'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=800&q=80',
-    colors: ['#2f4f4f', '#000000', '#808080'],
-  },
-  {
-    id: 62, name: 'Distressed Boyfriend Jeans', price: 2499, category: 'Pants', gender: 'Women', subcategory: 'Jeans',
-    description: 'Relaxed boyfriend-fit jeans with artful distressing.',
-    image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80',
-    colors: ['#4682b4', '#87ceeb'],
-  },
-
-  // ═══════════════════════ MORE SHOES ═══════════════════════
-  {
-    id: 63, name: 'Leather Espadrilles', price: 2999, category: 'Shoes', gender: 'Men', subcategory: 'Casual Shoes',
-    description: 'Handwoven jute sole with premium leather upper.',
-    image: 'https://images.unsplash.com/photo-1512374382149-433a72b9a5a5?w=800&q=80',
-    colors: ['#d2b48c', '#ffffff'],
-  },
-  {
-    id: 64, name: 'Chunky Platform Trainers', price: 4499, category: 'Shoes', gender: 'Women', subcategory: 'Sneakers',
-    description: 'Oversized sole platform sneakers. Bold streetwear statement.',
-    image: 'https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800&q=80',
-    colors: ['#ffffff', '#000000', '#ff69b4'],
-  },
-  {
-    id: 65, name: 'Chelsea Leather Boots', price: 5999, category: 'Shoes', gender: 'Men', subcategory: 'Boots',
-    description: 'Classic pull-on Chelsea boots in polished leather.',
-    image: 'https://images.unsplash.com/photo-1605733513597-a8f8d410fe3c?w=800&q=80',
-    colors: ['#000000', '#8b4513'],
-  },
-
-  // ═══════════════════════ MORE JACKETS ═══════════════════════
-  {
-    id: 66, name: 'Varsity Letterman Jacket', price: 3999, category: 'Jackets', gender: 'Men', subcategory: 'Varsity Jackets',
-    description: 'Wool body, leather sleeves. Classic Americana style.',
-    image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=80',
-    colors: ['#000080', '#ffffff', '#8b0000'],
-  },
-  {
-    id: 67, name: 'Safari Utility Jacket', price: 4299, category: 'Jackets', gender: 'Men', subcategory: 'Casual Jackets',
-    description: 'Multi-pocket safari jacket in washed cotton canvas.',
-    image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80',
-    colors: ['#8b7355', '#556b2f'],
-  },
-  {
-    id: 68, name: 'Lightweight Rain Shell', price: 2499, category: 'Jackets', gender: 'Unisex', subcategory: 'Windbreakers',
-    description: 'Waterproof breathable shell. Packs into its own pocket.',
-    image: 'https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=800&q=80',
-    colors: ['#4169e1', '#000000'],
-  },
-
-  // ═══════════════════════ MORE FLIP FLOPS ═══════════════════════
-  {
-    id: 69, name: 'Leather Pool Slides', price: 1699, category: 'Flip Flops', gender: 'Men', subcategory: 'Slides',
-    description: 'Premium leather slides with cushioned footbed.',
-    image: '/leather_pool_slides.png',
-    colors: ['#000000', '#8b4513'],
-  },
-  {
-    id: 70, name: 'Rope Thong Sandals', price: 899, category: 'Flip Flops', gender: 'Women', subcategory: 'Sandals',
-    description: 'Woven rope sandals with natural jute detail.',
-    image: '/rope_thong_sandals.png',
-    colors: ['#d2b48c', '#f5f5dc'],
-  },
-
-  // ═══════════════════════ MORE T-SHIRTS ═══════════════════════
-  {
-    id: 71, name: 'Color Block Crew Tee', price: 1199, category: 'T-Shirts', gender: 'Men', subcategory: 'Basic Tees',
-    description: 'Bold two-tone color block design. Relaxed fit.',
-    image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80',
-    colors: ['#4169e1', '#ffffff', '#000000'],
-  },
-  {
-    id: 72, name: 'Striped Ringer Tee', price: 999, category: 'T-Shirts', gender: 'Women', subcategory: 'Vintage Tees',
-    description: 'Retro-inspired ringer tee with contrast collar and cuffs.',
-    image: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=800&q=80',
-    colors: ['#ffffff', '#000080', '#8b0000'],
-  },
-  {
-    id: 73, name: 'Embroidered Logo Tee', price: 1399, category: 'T-Shirts', gender: 'Men', subcategory: 'Basic Tees',
-    description: 'Minimal chest embroidery on premium supima cotton.',
-    image: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80',
-    colors: ['#2f4f4f', '#ffffff', '#000000'],
-  },
-  {
-    id: 74, name: 'Longline Drop Tee', price: 1099, category: 'T-Shirts', gender: 'Men', subcategory: 'Streetwear Tees',
-    description: 'Extended length tee with curved hem. Street essential.',
-    image: 'https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?w=800&q=80',
-    colors: ['#808080', '#000000', '#ffffff'],
-  },
-
-  // ═══════════════════════ MORE LUXURY ═══════════════════════
-  {
-    id: 75, name: 'Gold Plated Cufflinks', price: 7999, category: 'Luxury', gender: 'Men', subcategory: 'Luxury Accessories',
-    description: '18K gold-plated cufflinks with mother-of-pearl inlay.',
+    id: 97, name: '18K Gold Mother cufflinks', brand: 'MODA LUXE', price: 7999, category: 'Luxury', gender: 'Men', subcategory: 'Luxury Accessories',
+    description: 'Stunning luxury cufflinks plated in 18K gold and inset with iridescent natural mother-of-pearl shields.',
     image: 'https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?w=800&q=80',
     colors: ['#ffd700', '#ffffff'],
     isLuxury: true,
   },
   {
-    id: 76, name: 'Silk Evening Scarf', price: 8999, category: 'Luxury', gender: 'Women', subcategory: 'Luxury Accessories',
-    description: 'Hand-printed Italian silk scarf. 90cm x 90cm.',
+    id: 98, name: 'Heritage Cashmere evening Scarf', brand: 'MODA LUXE', price: 8999, category: 'Luxury', gender: 'Women', subcategory: 'Luxury Accessories',
+    description: 'Whisper-weight Italian cashmere shawl printed in gorgeous classic plaid check styling.',
     image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80',
     colors: ['#800020', '#ffd700', '#000080'],
     isLuxury: true,
   },
+  {
+    id: 99, name: 'Prestige Leather Oxford Shoes', brand: 'MODA LUXE', price: 14999, category: 'Luxury', gender: 'Men', subcategory: 'Luxury Outerwear',
+    description: 'Flawlessly hand-blocked wholecut oxford shoes in thick French calf leather with beveled waist soles.',
+    image: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=800&q=80',
+    colors: ['#0a0a0a', '#8b4513'],
+    isLuxury: true,
+  },
+  {
+    id: 100, name: ' swiss Gold Dial Chronograph', price: 24999, category: 'Luxury', gender: 'Men', subcategory: 'Luxury Watches',
+    description: 'Precision mechanical self-winding gold watch featuring custom moonphase dials and authentic alligator strap.',
+    image: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800&q=80',
+    colors: ['#ffd700', '#0a0a0a'],
+    isLuxury: true,
+  },
 
-  // ═══════════════════════ MORE COSMETICS ═══════════════════════
+  // ═══════════════════════ COSMETICS (IDs 101-115) ═══════════════════════
   {
-    id: 77, name: 'Setting Spray Mist', price: 999, category: 'Cosmetics', gender: 'Women', subcategory: 'Face',
-    description: 'All-day makeup setting spray with dewy finish.',
-    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&q=80',
-    colors: ['#87ceeb', '#ffffff'],
-  },
-  {
-    id: 78, name: 'Blush Palette Trio', price: 1899, category: 'Cosmetics', gender: 'Women', subcategory: 'Face',
-    description: 'Three buildable blush shades. Shimmer and matte.',
-    image: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&q=80',
-    colors: ['#ff69b4', '#ffc0cb', '#dc143c'],
-  },
-  {
-    id: 79, name: 'Floral Comfort Flip Flops', price: 699, category: 'Flip Flops', gender: 'Women', subcategory: 'Flip Flops',
-    description: 'Beautiful floral design flip flops for casual wear.',
-    image: '/womens_floral_flip_flops.png',
-    colors: ['#ffb6c1', '#ffffff'],
-  },
-  {
-    id: 80, name: 'Kids Colorful Fun Slides', price: 599, category: 'Flip Flops', gender: 'Kids', subcategory: 'Slides',
-    description: 'Bright and colorful slides perfect for kids.',
-    image: '/kids_colorful_slides.png',
-    colors: ['#ff0000', '#00ff00', '#0000ff'],
-  },
-  {
-    id: 81, name: 'Pro Running Sneakers', price: 2999, category: 'Shoes', gender: 'Women', subcategory: 'Sneakers',
-    description: 'Stylish pink and white running sneakers for ultimate comfort.',
-    image: '/womens_running_sneakers_1778657335616.png',
-    colors: ['#ffc0cb', '#ffffff'],
-  },
-  {
-    id: 82, name: 'Kids Light-up Sneakers', price: 1499, category: 'Shoes', gender: 'Kids', subcategory: 'Sneakers',
-    description: 'Cool light-up sneakers with velcro straps for kids.',
-    image: '/kids_light_up_sneakers_1778657352050.png',
-    colors: ['#ffff00', '#000000'],
-  },
-  {
-    id: 83, name: 'Premium Gold Chronograph', price: 14999, category: 'Luxury', gender: 'Men', subcategory: 'Watches',
-    description: 'Exquisite gold luxury watch with chronographic precision.',
-    image: '/luxury_gold_watch_1778658154366.png',
-    colors: ['#ffd700', '#000000'],
-  },
-  {
-    id: 84, name: 'Radiant Glow Skin Kit', price: 4599, category: 'Cosmetics', gender: 'Women', subcategory: 'Skincare',
-    description: 'Complete glowing skin cosmetic kit for daily luxury care.',
-    image: '/cosmetics_glow_kit_1778658185320.png',
-    colors: ['#ffb6c1', '#ffffff'],
-  },
-  {
-    id: 85, name: 'Silk Button-Down Shirt', price: 3499, category: 'Shirts', gender: 'Men', subcategory: 'Dress Shirts',
-    description: 'Premium silk button-down shirt for formal occasions.',
-    image: '/shirts_silk_buttondown_1778658200718.png',
-    colors: ['#ffffff', '#000080'],
-  },
-  {
-    id: 86, name: 'Khaki Cargo Pants', price: 2199, category: 'Pants', gender: 'Men', subcategory: 'Cargo',
-    description: 'Durable khaki cargo pants with multiple utility pockets.',
-    image: '/pants_cargo_khaki_1778658215355.png',
-    colors: ['#f5f5dc', '#556b2f'],
-  },
-  {
-    id: 87, name: 'Rugged Hiking Boots', price: 5499, category: 'Shoes', gender: 'Unisex', subcategory: 'Boots',
-    description: 'Durable all-terrain hiking boots for outdoor adventures.',
-    image: 'https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=800&q=80',
-    colors: ['#8b4513', '#000000'],
-  },
-  {
-    id: 88, name: 'Denim Sherpa Jacket', price: 4299, category: 'Jackets', gender: 'Men', subcategory: 'Denim',
-    description: 'Classic denim jacket lined with warm sherpa fleece.',
-    image: 'https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=800&q=80',
-    colors: ['#4682b4', '#ffffff'],
-  },
-  {
-    id: 89, name: 'Leather Strap Flip Flops', price: 1299, category: 'Flip Flops', gender: 'Women', subcategory: 'Sandals',
-    description: 'Elegant leather strap flip flops for summer comfort.',
-    image: '/leather_strap_flip_flops.png',
-    colors: ['#8b4513', '#d2b48c'],
-  },
-  {
-    id: 90, name: 'Vintage Band Tee', price: 1499, category: 'T-Shirts', gender: 'Unisex', subcategory: 'Graphic Tees',
-    description: 'Authentic vintage wash graphic band t-shirt.',
-    image: 'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=800&q=80',
-    colors: ['#000000', '#808080'],
-  },
-  // ═══════════════════════ NEW FASHION & BEAUTY RELEASES ═══════════════════════
-  {
-    id: 91, name: 'Fuji Blossom Print Shirt', brand: 'K-STYLE TOKYO', price: 1699, category: 'Shirts', gender: 'Men', subcategory: 'Korean fashion shirts',
-    description: 'Relaxed fit printed shirt featuring hand-drawn cherry blossom motifs. Crafted from lightweight rayon.',
-    image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80',
-    colors: ['#ffb6c1', '#ffffff', '#000000'],
-  },
-  {
-    id: 92, name: 'Minimal Linen Overshirt', brand: 'LINEN CO.', price: 1899, category: 'Shirts', gender: 'Men', subcategory: 'Linen shirts',
-    description: 'An understated minimal linen overshirt featuring a drop shoulder and large patch pockets. Highly breathable fabric.',
-    image: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800&q=80',
-    colors: ['#f5f5dc', '#ffffff', '#2f4f4f'],
-  },
-  {
-    id: 93, name: 'Seoul Relaxed Chambray', brand: 'K-STYLE TOKYO', price: 1799, category: 'Shirts', gender: 'Men', subcategory: 'Korean fashion shirts',
-    description: 'Soft-washed cotton chambray shirt with a boxy Korean silhouette and an elegant band collar.',
-    image: 'https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?w=800&q=80',
-    colors: ['#6495ed', '#4682b4'],
-  },
-  {
-    id: 94, name: 'Cyber Grunge Plaid Shirt', brand: 'STREET CORE', price: 2199, category: 'Shirts', gender: 'Unisex', subcategory: 'Y2K shirts',
-    description: 'Heavyweight oversized plaid shirt with distress detailing and metal hardware accents. True Y2K grunge aesthetic.',
-    image: 'https://images.unsplash.com/photo-1516257984-b1b4d707412e?w=800&q=80',
-    colors: ['#8b0000', '#000000', '#696969'],
-  },
-  {
-    id: 95, name: 'Vintage Baggy Carpenter Denim', brand: 'DENIM X', price: 3499, category: 'Pants', gender: 'Men', subcategory: 'Baggy jeans',
-    description: 'Ultra baggy 90s style carpenter pants in a heavily washed indigo denim. Features hammer loop and utility pockets.',
-    image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80',
-    colors: ['#4682b4', '#708090'],
-  },
-  {
-    id: 96, name: 'Techwear Multi-Pocket Cargos', brand: 'STEALTH PRO', price: 2999, category: 'Pants', gender: 'Men', subcategory: 'Streetwear cargos',
-    description: 'Water-resistant tactical cargos featuring adjustable strap buckles and hidden modular compartment pockets.',
-    image: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&q=80',
-    colors: ['#000000', '#2f4f4f', '#556b2f'],
-  },
-  {
-    id: 97, name: 'Draped Wide-Leg Pleated Trousers', brand: 'MODA LUXE', price: 2799, category: 'Pants', gender: 'Women', subcategory: 'Wide leg pants',
-    description: 'Flowy, high-waisted pleated trousers in a lightweight drape fabric. Delivering a luxury magazine-front silhouette.',
-    image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80',
-    colors: ['#ffffff', '#d2b48c', '#000000'],
-  },
-  {
-    id: 98, name: 'Aero Drift Street Sneakers', brand: 'PULSE ATHLETICS', price: 4599, category: 'Shoes', gender: 'Unisex', subcategory: 'Streetwear shoes',
-    description: 'Dynamic knit mesh running sneakers featuring shock-absorbing sole tech and high-contrast styling lines.',
-    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80',
-    colors: ['#ff4500', '#000000', '#ffffff'],
-  },
-  {
-    id: 99, name: 'Monolith Chunky Trainers', brand: 'VOID FOOTWEAR', price: 5499, category: 'Shoes', gender: 'Unisex', subcategory: 'Chunky shoes',
-    description: 'Extreme platform retro trainers in premium white leather with high-traction thick rubber outsoles.',
-    image: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80',
-    colors: ['#ffffff', '#c0c0c0'],
-  },
-  {
-    id: 100, name: 'Heritage Leather High-Tops', brand: 'VOID FOOTWEAR', price: 6299, category: 'Shoes', gender: 'Men', subcategory: 'High-top shoes',
-    description: 'Sleek premium leather high-top sneakers with retro panel stitch lines and padded ankle support collars.',
-    image: 'https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800&q=80',
-    colors: ['#000000', '#ffffff', '#ff3f6c'],
-  },
-  {
-    id: 101, name: 'Midnight Bomber Flux', brand: 'STEALTH PRO', price: 4799, category: 'Jackets', gender: 'Men', subcategory: 'Bomber jackets',
-    description: 'Heavy flight nylon bomber featuring insulated quilted lining, tactical arm zip-pocket, and water-repellent shell.',
-    image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80',
-    colors: ['#000000', '#556b2f'],
-  },
-  {
-    id: 102, name: 'Vintage Denim Sherpa Trucker', brand: 'DENIM X', price: 3899, category: 'Jackets', gender: 'Men', subcategory: 'Denim jackets',
-    description: 'Rigid raw denim trucker jacket fully lined with plush, high-insulation sherpa fleece for ultimate warmth and heritage style.',
-    image: 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=800&q=80',
-    colors: ['#4682b4', '#87ceeb'],
-  },
-  {
-    id: 103, name: 'Hype Cushion Street Slides', brand: 'STREET CORE', price: 1599, category: 'Flip Flops', gender: 'Unisex', subcategory: 'Streetwear slides',
-    description: 'Bold oversized foam slides with thick, supportive ergonomic platforms. Built for superior street fashion comfort.',
-    image: 'https://images.unsplash.com/photo-1603487742131-4160ec999306?w=800&q=80',
-    colors: ['#000000', '#ffffff', '#ff3f6c'],
-  },
-  {
-    id: 104, name: 'Osaka Minimal Sandal', brand: 'K-STYLE TOKYO', price: 1899, category: 'Flip Flops', gender: 'Unisex', subcategory: 'Luxury sandals',
-    description: 'Artisanal double-strap leather sandals with contoured cork footbeds and premium gunmetal buckles.',
-    image: 'https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=800&q=80',
-    colors: ['#8b4513', '#000000', '#f5f5dc'],
-  },
-  {
-    id: 105, name: 'Tokyo Neon Graphic Tee', brand: 'STREET CORE', price: 1499, category: 'T-Shirts', gender: 'Unisex', subcategory: 'Streetwear tshirts',
-    description: 'Heavyweight organic cotton tee decorated with high-density glowing neon Tokyo cyber designs.',
-    image: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=800&q=80',
-    colors: ['#000000', '#ffffff', '#8a2be2'],
-  },
-  {
-    id: 106, name: 'Minimal Waffle Henley Tee', brand: 'BASIC ELITE', price: 1199, category: 'T-Shirts', gender: 'Men', subcategory: 'Minimal tees',
-    description: 'Soft brushed waffle knit cotton tee with a clean three-button henley placket and tailored sleeve cuffs.',
-    image: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80',
-    colors: ['#2f4f4f', '#f5f5dc', '#808080'],
-  },
-  {
-    id: 107, name: 'Sovereign Heavyweight Plain Tee', brand: 'DRIPZO SIGNATURE', price: 1699, category: 'T-Shirts', gender: 'Men', subcategory: 'Luxury plain tees',
-    description: 'Luxuriously thick, pre-shrunk combed supima cotton tee. Boxy relaxed drape, perfect blank staple.',
-    image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80',
-    colors: ['#ffffff', '#000000', '#ff3f6c'],
-  },
-  {
-    id: 108, name: 'Glossy Glass Plumping Lip Oil', brand: 'AURA BEAUTY', price: 1299, category: 'Cosmetics', gender: 'Women', subcategory: 'Lip gloss',
+    id: 101, name: 'Glossy Glass Plumping Lip Oil', brand: 'AURA BEAUTY', price: 1299, category: 'Cosmetics', gender: 'Women', subcategory: 'Lip gloss',
     description: 'High-shine, non-sticky lip nourishing oil infused with active hyaluronic acid spheres and cherry fruit extracts.',
     image: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=800&q=80',
     colors: ['#ffc0cb', '#cc5533', '#ffffff'],
@@ -703,7 +634,7 @@ const products = [
     requirement: 'Cruelty Free & Vegan'
   },
   {
-    id: 109, name: 'Crushed Velvet Matte Lipstick', brand: 'AURA BEAUTY', price: 1099, category: 'Cosmetics', gender: 'Women', subcategory: 'Matte lipstick',
+    id: 102, name: 'Crushed Velvet Matte Lipstick', brand: 'AURA BEAUTY', price: 1099, category: 'Cosmetics', gender: 'Women', subcategory: 'Matte lipstick',
     description: 'Weightless matte lipstick featuring intense single-stroke pigments and dynamic hydrating avocado oil.',
     image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=80',
     colors: ['#8b0000', '#ff69b4', '#800020'],
@@ -711,7 +642,7 @@ const products = [
     requirement: '12-Hour Smudge Proof'
   },
   {
-    id: 110, name: 'Pure Retinol Botanical Serum', brand: 'AURA BEAUTY', price: 2199, category: 'Cosmetics', gender: 'Unisex', subcategory: 'Face serum',
+    id: 103, name: 'Pure Retinol Botanical Serum', brand: 'AURA BEAUTY', price: 2199, category: 'Cosmetics', gender: 'Unisex', subcategory: 'Face serum',
     description: 'Advanced anti-aging evening facial serum loaded with 1.5% micro-encapsulated pure retinol and organic aloe juice.',
     image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&q=80',
     colors: ['#ffd700', '#ffffff'],
@@ -719,15 +650,15 @@ const products = [
     requirement: 'Dermatologist Tested'
   },
   {
-    id: 111, name: 'Celestial Oud Perfume Intense', brand: 'AURA BEAUTY', price: 5999, category: 'Cosmetics', gender: 'Unisex', subcategory: 'Luxury perfume',
+    id: 104, name: 'Celestial Oud Perfume Intense', brand: 'AURA BEAUTY', price: 5999, category: 'Cosmetics', gender: 'Unisex', subcategory: 'Luxury perfume',
     description: 'Opulent and mysterious signature scent blending rich smoked agarwood, sweet Bulgarian rose, and spiced patchouli.',
     image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&q=80',
-    colors: ['#ffd700', '#000000'],
+    colors: ['#ffd700', '#0a0a0a'],
     volume: '100ml',
     requirement: 'Long-Lasting Eau De Parfum'
   },
   {
-    id: 112, name: 'Luminous Silk Air Foundation', brand: 'AURA BEAUTY', price: 3299, category: 'Cosmetics', gender: 'Women', subcategory: 'Foundation',
+    id: 105, name: 'Luminous Silk Air Foundation', brand: 'AURA BEAUTY', price: 3299, category: 'Cosmetics', gender: 'Women', subcategory: 'Foundation',
     description: 'Weightless air-whipped liquid foundation offering custom buildable coverage and a gorgeous dew-lit finish.',
     image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=80',
     colors: ['#f5e6d3', '#d2b48c', '#8b7355'],
@@ -735,7 +666,7 @@ const products = [
     requirement: 'Hydrating All-Day Wear'
   },
   {
-    id: 113, name: 'Satin Finish Compact Powder', brand: 'AURA BEAUTY', price: 1699, category: 'Cosmetics', gender: 'Women', subcategory: 'Compact powder',
+    id: 106, name: 'Satin Finish Compact Powder', brand: 'AURA BEAUTY', price: 1699, category: 'Cosmetics', gender: 'Women', subcategory: 'Compact powder',
     description: 'Ultra-fine milled translucent powder designed to instantly blur skin pores, control shine, and lock in makeup setting.',
     image: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&q=80',
     colors: ['#d2b48c', '#ffffff'],
@@ -743,20 +674,76 @@ const products = [
     requirement: 'Paraben & Talc Free'
   },
   {
-    id: 114, name: 'Golden Hour Glow Skincare Kit', brand: 'AURA BEAUTY', price: 4299, category: 'Cosmetics', gender: 'Women', subcategory: 'Skincare kits',
+    id: 107, name: 'Golden Hour Glow Skincare Kit', brand: 'AURA BEAUTY', price: 4299, category: 'Cosmetics', gender: 'Women', subcategory: 'Skincare kits',
     description: 'Complete 3-step organic skincare routine: Gentle Cleanser (150ml), Glow Toner (100ml), and Water Jelly Moisturizer (50ml).',
     image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&q=80',
     colors: ['#ffb6c1', '#ffffff'],
     volume: '3-Piece Set',
-    requirement: 'Organic & Organic Ingredients'
+    requirement: 'Organic Ingredients'
   },
   {
-    id: 115, name: 'Red Carpet Professional Makeup Set', brand: 'AURA BEAUTY', price: 8999, category: 'Cosmetics', gender: 'Women', subcategory: 'Luxury makeup sets',
+    id: 108, name: 'Red Carpet Professional Makeup Set', brand: 'AURA BEAUTY', price: 8999, category: 'Cosmetics', gender: 'Women', subcategory: 'Luxury makeup sets',
     description: 'Curated box of 8 premium vanity staples, including liquid highlighter, eye contour shadow palette, intense liner, and satin lip colors.',
     image: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&q=80',
-    colors: ['#ffd700', '#ffc0cb', '#000000'],
+    colors: ['#ffd700', '#ffc0cb', '#0a0a0a'],
     volume: '8-Piece Set',
     requirement: 'Luxury Professional Vanity Kit'
+  },
+  {
+    id: 109, name: 'Imperial Oud & Honey Mist', brand: 'AURA BEAUTY', price: 4999, category: 'Cosmetics', gender: 'Unisex', subcategory: 'Luxury perfume',
+    description: 'A lighter body perfume spray layering heavy white honey blossoms, deep oud timber extracts, and warm vanilla absolute.',
+    image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&q=80',
+    colors: ['#ffd700', '#faf0e6'],
+    volume: '100ml',
+    requirement: 'Moisturizing Perfume Mist'
+  },
+  {
+    id: 110, name: 'Bakuchiol Retinol-Alternative Serum', brand: 'AURA BEAUTY', price: 2399, category: 'Cosmetics', gender: 'Unisex', subcategory: 'Face serum',
+    description: 'Natural alternative evening serum packed with 2% pure Bakuchiol plant oils and hydrating micro-algae spheres.',
+    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&q=80',
+    colors: ['#c9b1ff', '#ffffff'],
+    volume: '30ml',
+    requirement: 'Safe For Sensitive Skin'
+  },
+  {
+    id: 111, name: 'Hyaluronic Water-Bomb Moisturizer', brand: 'AURA BEAUTY', price: 1899, category: 'Cosmetics', gender: 'Unisex', subcategory: 'Skincare kits',
+    description: 'Cooling blue gel moisturizer delivering deep hydration via five molecular weights of pure hyaluronic acid.',
+    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&q=80',
+    colors: ['#afeeee', '#ffffff'],
+    volume: '50ml',
+    requirement: '72-Hour Continuous Lock'
+  },
+  {
+    id: 112, name: 'Pro eye Shadow Palette Trio', brand: 'AURA BEAUTY', price: 2499, category: 'Cosmetics', gender: 'Women', subcategory: 'Luxury makeup sets',
+    description: '18 high-pigment professional shades encompassing shimmery bronzes, matte berries, and high-impact gold foils.',
+    image: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&q=80',
+    colors: ['#ffd700', '#800020', '#8b4513'],
+    volume: '18 Shades',
+    requirement: 'Smudge-Free Crease Proof'
+  },
+  {
+    id: 113, name: 'Dynamic hydration Skin Combo', brand: 'AURA BEAUTY', price: 3499, category: 'Cosmetics', gender: 'Unisex', subcategory: 'Beauty combo kits',
+    description: 'Double-duty daily glow hydration combo comprising our signature Hyaluronic Water-Bomb and Retinol Botanical Serum.',
+    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&q=80',
+    colors: ['#ffd700', '#ffffff'],
+    volume: '2-Piece Kit',
+    requirement: 'Perfect Skincare Routine'
+  },
+  {
+    id: 114, name: 'Matte Liquid Lip Gloss Plumper', brand: 'AURA BEAUTY', price: 1199, category: 'Cosmetics', gender: 'Women', subcategory: 'Lip gloss',
+    description: 'Semi-matte plumping lip gloss featuring organic menthol derivatives for a fresh, high-volume outline.',
+    image: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=800&q=80',
+    colors: ['#ffc0cb', '#cc5533'],
+    volume: '6ml',
+    requirement: 'Volumizing & Plumping'
+  },
+  {
+    id: 115, name: 'Satin Kiss Red Matte Lipstick', brand: 'AURA BEAUTY', price: 1199, category: 'Cosmetics', gender: 'Women', subcategory: 'Matte lipstick',
+    description: 'High-impact signature scarlet red matte lipstick enriched with satin micro-particles for a velvet finish.',
+    image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=80',
+    colors: ['#ff0000', '#8b0000'],
+    volume: '4g',
+    requirement: '24-Hour Feather Proof'
   },
 ];
 
@@ -889,7 +876,7 @@ export const getProductsByCategoryAndSubcategory = (category, subcategory) => {
 };
 
 export const getTrendingProducts = () => {
-  return [products[0], products[8], products[14], products[21], products[28], products[34], products[22], products[15]];
+  return [products[0], products[15], products[31], products[46], products[61], products[76], products[91], products[101]];
 };
 
 // ═══════════════════════ REVIEWS SYSTEM ═══════════════════════
@@ -925,7 +912,6 @@ const reviewComments = [
   'Absolutely stunning! Got compliments the first time I wore it. ⭐⭐⭐⭐⭐',
 ];
 
-// Helper to get a stable numeric value from any product ID (supporting number or string/UUID)
 const getNumericId = (id) => {
   if (typeof id === 'number') return id;
   if (!id) return 0;
@@ -938,7 +924,6 @@ const getNumericId = (id) => {
   return Math.abs(hash);
 };
 
-// Generate seeded reviews for each product
 const generateProductReviews = (productId) => {
   const seed = getNumericId(productId) * 7;
   const numReviews = 3 + (seed % 4); // 3-6 reviews per product
@@ -960,7 +945,6 @@ const generateProductReviews = (productId) => {
   return reviews;
 };
 
-// In-memory review store
 const reviewStore = {};
 
 export const getProductReviews = (productId) => {
@@ -1061,7 +1045,6 @@ export const setDynamicProducts = (newProducts) => {
   
   // Map and push the new backend products
   newProducts.forEach(p => {
-    // Determine the colors and brand from tags
     const subcategory = p.tags?.[0] || p.category || 'Casual';
     const brand = p.tags?.[1] || 'DRIPZO SIGNATURE';
     const colors = p.tags?.slice(2) || ['#ffffff'];
