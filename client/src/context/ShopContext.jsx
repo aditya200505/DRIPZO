@@ -19,12 +19,16 @@ export const ShopProvider = ({ children }) => {
       try {
         const API_BASE = import.meta.env.VITE_API_URL || (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? 'http://localhost:5000/api' : 'https://dripzo-backend.onrender.com/api');
         const { data } = await axios.get(`${API_BASE}/products`);
-        if (data.success && data.products) {
+        if (data.success && data.products && data.products.length > 0) {
           setDynamicProducts(data.products);
+          setProductsLoaded(true);
+        } else {
+          console.warn('Database returned empty product list, using robust static product catalog instead.');
           setProductsLoaded(true);
         }
       } catch (error) {
         console.error('Failed to load products from database, falling back to static product data:', error.message);
+        setProductsLoaded(true);
       }
     };
     fetchProducts();

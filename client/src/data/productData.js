@@ -1054,7 +1054,7 @@ export const faqData = [
 ];
 
 export const setDynamicProducts = (newProducts) => {
-  if (!Array.isArray(newProducts)) return;
+  if (!Array.isArray(newProducts) || newProducts.length === 0) return;
   
   // Clear the existing static products safely
   products.splice(0, products.length);
